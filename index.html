@@ -15,84 +15,156 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
   </head>
-   <body class="smooth-scroll relative">
-        <header>
-            <div id="mobile" class="flex justify-between items-baseline lg:hidden">
+    <body class="relative">
+        <div class="loader-wraper w-full h-screen absolute z-[100] flex flex-col justify-center items-center bg-transparent overflow-hidden">
+                <svg class="absolute top-0 w-full h-110vh" viewBox="0 0 1000 1000" preserveAspectRatio="none">
+                    <path id="svg" fill="url(#paint0_linear_1_4)" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+                    <defs>
+                        <linearGradient id="paint0_linear_1_4" x1="295" y1="-148.5" x2="333" y2="1024" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#B7A8D7"/>
+                        <stop offset="0.505208" stop-color="#D3E2F7"/>
+                        <stop offset="1" stop-color="#D3E2F7"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="loader-wrap-heading">
+                    <span class="overflow-hidden block z-[101] font-quiche text-8xl text-white py-4"><h1>Loading</h1></span>
+                </div>
+        </div>
+        <div class="main-container relative w-full flex flex-col justify-center">
+            <header>
+                <div id="mobile" class="flex justify-between items-baseline bg-gradient-to-b from-black/20 to-black/0 backdrop-blur-md border-b border-white/70 shadow-md lg:hidden">
                 <div>
                     <a class="text-4xl font-bold font-funkydori pl-5" href="#Home">Muses</a>
                 </div>
                 <div class="inline-block text-xl p-5 cursor-pointer" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                     <i id="bar" class="bx bx-menu"></i>
                 </div>
-            </div>
-            <div class="offcanvas offcanvas-end fixed bottom-0 flex flex-col max-w-full bg-gradient-to-br from-pink-450 to-red-300 invisible bg-clip-padding shadow-sm outline-none transition duration-300 ease-in-out top-0 right-0 border-none w-96" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-                <div class="offcanvas-body flex-grow p-4 overflow-y-auto">
-                    <div class="flex flex-col justify-start">
-                        <ul>
-                            <li class="text-2xl p-5 cursor-pointer" type="button" data-bs-dismiss="offcanvas" aria-label="Close"><i id="close" class="bx bx-x close"></i></li>
-                            <li class="text-xl p-5 tracking-wider"><a href="#Home">Home</a></li>
-                            <li class="text-xl p-5 mt-2 tracking-wider"><a href="#products">Shop</a></li>
-                            <li class="text-xl p-5 mt-2 tracking-wider"><a href="#ootd">Ootd</a></li>
-                        </ul>	
+                </div>
+                <div id="offcanvas" class="offcanvas offcanvas-end fixed bottom-0 flex flex-col max-w-full bg-gradient-to-br from-pink-450 to-red-300 invisible bg-clip-padding shadow-sm outline-none transition duration-300 ease-in-out top-0 right-0 border-none w-96" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-body flex-grow p-4 overflow-y-auto">
+                        <div class="flex flex-col justify-start">
+                            <ul>
+                                <li class="text-2xl p-5 cursor-pointer" type="button" data-bs-dismiss="offcanvas" aria-label="Close"><i id="close" class="bx bx-x close"></i></li>
+                                <li class="text-xl p-5 tracking-wider"><a href="#Home">Home</a></li>
+                                <li class="text-xl p-5 mt-2 tracking-wider"><a href="#products">Shop</a></li>
+                                <li class="text-xl p-5 mt-2 tracking-wider"><a href="#ootd">Ootd</a></li>
+                            </ul>	
+                        </div>
+                        <div class="absolute bottom-0 right-0 bg-white text-black w-full text-xl flex items-center">
+                            <a href="#ootd">前進商城</a>
+                            <i class='bx bx-link-external'></i>
+                        </div>
                     </div>
-                    <div class="absolute bottom-0 right-0 bg-white text-black w-full text-xl">
-                        <ul class="flex justify-between items-center p-4">
-                            <li>
-                                <button><i class="bx bx-search"></i></button>
-                            </li>
-                            <li>
-                                <button><i class="bx bx-log-in"></i></button>
-                            </li>
-                            <li>
-                                <button><i class="bx bx-cart"></i></button>
-                            </li>
-                        </ul>
+                </div>
+            </header>
+            <header id="laptop" class="bg-gradient-to-b from-black/20 to-black/0 backdrop-blur-md border-b border-white/70 shadow-md">
+                <div class="hidden lg:flex justify-between items-baseline px-5 py-2 mx-16">
+                    <a class="text-4xl font-bold font-funkydori pl-5" href="#Home">Muses</a>
+                    <ul class="flex justify-between items-center">
+                        <li class="text-lg tracking-wider p-5 relative">
+                            <span class="block justify-center absolute bottom-1 ml-1 h-0.5 w-1/2 bg-white" aria-hidden="true"></span>
+                            <a href="#Home" class="relative">Home</a></li>
+                        <li class="text-lg tracking-wider p-5 scroll-smooth"><a href="#products">Shop</a></li>
+                        <li class="text-lg tracking-wider p-5 scroll-smooth"><a href="#ootd">Ootd</a></li>
+                    </ul>			
+                    <div class="text-white text-lg flex items-center">
+                        <a href="#" class="px-2">前進商城</a>
+                        <i class='bx bx-link-external cursor-pointer'></i>
+                    </div>			 
+                </div>
+            </header>
+            <div class="relative w-full h-screen overflow-hidden flex justify-center items-center bg-gradient-to-br from-purple-350 to-pink-200">
+                <div class="w-120% -left-10% -top-10% h-screen absolute">
+                    <div id="scene" class="blur-sm lg:blur-0">
+                        <div data-depth-x="0.2" class="absolute top-0 left-0 z-20">
+                            <img src="src/img/bg_2.png" class="h-screen w-full object-cover sm:h-auto" id="bg2">
+                        </div>
+                        <div data-depth-x="0.4" class="absolute top-0 left-0 z-0">
+                           <img src="src/img/bg_1.png" class="h-screen w-full object-cover sm:h-auto" id="bg1">
+                        </div>
+                    </div>
+                    <div class="absolute top-8 left-0 z-10 h-screen w-full flex mx-4 md:grid md:grid-cols-12">
+                        <div class="w-full md:col-span-5 md:col-start-2 z-20 relative">
+                            <div class="absolute top-48 left-16 md:top-32 md:left-16 lg:top-48 lg:left-48 flex flex-col justify-start">
+                                <h1 class="my-4 text-black text-4xl md:text-3xl lg:text-6xl font-light tracking-wider">穿上<span class="font-funkydori"> Muses</span><br>獨特風格由你定義</h1>
+                                <p class="my-4 text-black text-base font-Noto Sans tracking-wide flex-wrap">我們致力於為你帶來最完美的穿搭體驗和購物體驗，讓你感受到 Muses 獨特的魅力。</p>
+                                <div class="my-4 flex justify-start items-center">
+                                    <p class=" bg-black text-white font-Noto Sans text-base tracking-wider px-8 py-4 rounded-md mr-8 cursor-pointer">加入會員</p>
+                                </div>
+                            </div>
+                        </div>
+                        <canvas id="canvas3d" class="hidden md:grid md:col-span-5 md:col-start-7"></canvas>
                     </div>
                 </div>
             </div>
-        </header>
-        <nav id="laptop" class="fixed top-0 left-0 w-full z-50 justify-between items-baseline p-5 text-white hidden lg:flex">
-            <a class="text-4xl font-bold font-funkydori pl-5" href="#Home">Muses</a>
-            <ul class="flex justify-between items-center">
-                <li class="text-lg tracking-wider p-5 relative">
-                    <span class="block justify-center absolute bottom-1 ml-1 h-0.5 w-1/2 bg-white" aria-hidden="true"></span>
-                    <a href="#Home" class="relative">Home</a></li>
-                <li class="text-lg tracking-wider p-5 scroll-smooth"><a href="#products">Shop</a></li>
-                <li class="text-lg tracking-wider p-5 scroll-smooth"><a href="#ootd">Ootd</a></li>
-            </ul>			
-            <ul class="flex justify-between items-center">
-                <li class="text-xl p-5">
-                    <a href="#"><i class="bx bx-search"></i></a>
-                </li>
-                <li class="text-xl p-5">
-                    <a href="#"><i class="bx bx-log-in"></i></a>
-                </li>
-                <li class="text-xl p-5">
-                    <a href="#"><i class="bx bx-cart" id="mybag-btn"></i></a>
-                </li>
-            </ul>			
-        </nav> 
-        <section class="relative w-full h-screen overflow-x-hidden flex justify-center items-center py-24">
-            <div class="w-120% -left-10% -top-10% h-screen absolute">
-                <div id="scene">
-                    <div data-depth-x="0.2" class="absolute top-0 left-0 z-20">
-                        <img src="src/img/bg_2.png" class="h-screen object-cover sm:h-auto" id="bg2">
-                    </div>
-                    <div data-depth-x="0.4" class="absolute top-0 left-0 z-0">
-                        <img src="src/img/bg_1.png" class="h-screen object-cover sm:h-auto" id="bg1">
+            <div class="bg-pink-50 w-full h-screen">
+            <div class="flex flex-row">
+                <div class="bg-bags bg-cover w-1/3 h-screen flex flex-col justify-center items-center">
+                    <div class="w-full h-screen backdrop-blur-sm flex flex-col justify-center items-center">
+                        <div class="m-8 bg-red-50 p-16 rounded-tl-full rounded-tr-full flex flex-col justify-center items-center group hover:bg-bags hover:bg-cover duration-300 ease-out hover:text-white">
+                            <div class="flex flex-col justify-center items-center my-4">
+                                <span class="font-quiche text-base my-4">/ Bags /</span>
+                                <h2 class="text-3xl tracking-wider  my-4">包款</h2>                   
+                            </div>
+                            <p class="font-quiche text-9xl my-4">01</p>
+                            <p class="text-xs my-4">精緻、永恆的款式，奢華的細節和現代設計。</p>
+                            <div class="bg-black group-hover:bg-white h-0.5 w-full my-5"></div>                                
+                            <div class="flex flex-col w-full">                        
+                                <button class="w-full flex justify-center items-center font-quiche text-2xl py-2 px-3 rounded-md text-black hover:text-white group-hover:bg-black hover:bg-black transition-colors">
+                                    <span class="group-hover:text-white">More</span>
+                                </button>                        
+                            </div>
+                        </div>  
                     </div>
                 </div>
-                <div class="absolute top-8 left-0 z-10 h-screen w-full grid grid-cols-2 mx-8">
-                    <div class="col-span-1 z-20 relative">
-                        <h1 class="absolute top-48 left-48 font-quiche text-white text-7xl">All you need all unique</h1>
-                        <p class="absolute top-96 left-48 bg-pink-500 text-white font-Noto Sans text-base px-8 py-4">加入會員</p>
+                <div class="bg-clothes bg-cover w-1/3 h-screen flex flex-col justify-center items-center">
+                    <div class="w-full h-screen backdrop-blur-sm flex flex-col justify-center items-center">
+                        <div class="m-8 bg-red-50 p-16 rounded-tl-full rounded-tr-full flex flex-col justify-center items-center group hover:bg-bags hover:bg-cover duration-300 ease-out hover:text-white">
+                            <div class="flex flex-col justify-center items-center my-4">
+                                <span class="font-quiche text-base my-4">/ Clothes /</span>
+                                <h2 class="text-3xl tracking-wider  my-4">衣著</h2>                   
+                            </div>
+                            <p class="font-quiche text-9xl my-4">02</p>
+                            <p class="text-xs my-4">自由與高雅創意的展現。</p>
+                            <div class="bg-black group-hover:bg-white h-0.5 w-full my-5"></div>                                
+                            <div class="flex flex-col w-full">                        
+                                <button class="w-full flex justify-center items-center font-quiche text-2xl py-2 px-3 rounded-md text-black hover:text-white group-hover:bg-black hover:bg-black transition-colors">
+                                    <span class="group-hover:text-white">More</span>
+                                </button>                        
+                            </div>
+                        </div>  
                     </div>
-                    <canvas id="canvas3d" class="col-span-1"></canvas>
+                </div>
+                <div class="bg-acc bg-cover w-1/3 h-screen flex flex-col justify-center items-center">
+                    <div class="w-full h-screen backdrop-blur-sm flex flex-col justify-center items-center">
+                        <div class="m-8 bg-red-50 p-16 rounded-tl-full rounded-tr-full flex flex-col justify-center items-center group hover:bg-bags hover:bg-cover duration-300 ease-out hover:text-white">
+                            <div class="flex flex-col justify-center items-center my-4">
+                                <span class="font-quiche text-base my-4">/ Accessories /</span>
+                                <h2 class="text-3xl tracking-wider  my-4">配飾</h2>                   
+                            </div>
+                            <p class="font-quiche text-9xl my-4">03</p>
+                            <p class="text-xs my-4">以標誌皮革和圖案精心製作的高雅配飾，採用雅致和經典色調。</p>
+                            <div class="bg-black group-hover:bg-white h-0.5 w-full my-5"></div>                                
+                            <div class="flex flex-col w-full">                        
+                                <button class="w-full flex justify-center items-center font-quiche text-2xl py-2 px-3 rounded-md text-black hover:text-white group-hover:bg-black hover:bg-black transition-colors">
+                                    <span class="group-hover:text-white">More</span>
+                                </button>                        
+                            </div>
+                        </div>  
+                    </div>
+                </div>                  
+            </div>
+            </div>
+            <div class="w-full h-screen bg-pink-50">
+                <div class="flex flex-col justify-center items-center w-full h-screen bg-pink-50 flex-wrap">
+                    <h1 class="font-Noto Sans font-light text-2xl">品牌概念</h1>
+                    <div class="m-20">
+                        <p class="indent-8">來自 Muses 的每一款單品，都是我們用心挑選的極致之作，融合時尚、優雅、獨特，為你呈現一場穿越風格與個性的時尚之旅，無論何時穿上我們的服裝，你都將在人群中成為矚目的焦點。我們不僅提供獨一無二的時尚單品，更帶來多樣化的穿搭靈感，每季新品都給你驚喜與新鮮感，無論你是追求經典風格還是喜歡突破嘗試，我們總有一款適合你。精心包裝每一件商品，把它視為送給你的特別禮物，當拆開包裝時，那一份美好的感動將成為我們送給你的溫馨祝福。我們致力於為你帶來完美的穿搭和購物體驗，讓你感受到 Muses 獨特的魅力。</p>
+                    </div>
                 </div>
             </div>
-        </section>
-
-            <section id="ootd-sm" class="md:hidden flex flex-col justify-center items-center">
+            <div id="ootd-sm" class="md:hidden flex flex-col justify-center items-center">
                 <h1 class="text-4xl font-quiche font-bold p-5">Outfit of the day</h1>
                 <div class="m-8">
                     <div class="m-8 h-85vh">
@@ -166,8 +238,8 @@
                         </div>
                     </div>
                 </div>
-            </section>
-            <section id="ootd" class="hidden md:block">
+            </div>
+            <div id="ootd" class="hidden md:block">
                 <div class="w-full h-85vh grid grid-cols-3" id="ootd-1">
                     <div class="relative group flex justify-center items-center cursor-pointer overflow-hidden">
                         <div class="h-85vh hidden absolute -inset-0 z-10 bg-white/60 group-hover:block backdrop-blur-sm transition-colors"></div>
@@ -256,8 +328,7 @@
                         </div>
                     </div>
                 </div>
-            </section>  
-            
+            </div>  
             <footer class="flex justify-center align-middle flex-col bg-gradient-to-br from-pink-450 via-purple-350 to-red-300 text-white font-Poppins relative">
                 <div id="newsletter" class="grid xl:grid-cols-2 justify-center items-center mx-24 py-24 relative">
                     <div class="flex flex-col justify-center items-center">
@@ -305,15 +376,14 @@
                         <p> ©2022. JaneJhang - Ecommerce Template</p>
                     </div>
                 </div>
-            </footer> 
+            </footer>
+        </div> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/jquery.ScrollMagic.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.js"></script>
 
     <script type="text/javascript">
         var scene = document.getElementById('scene');
@@ -321,13 +391,6 @@
     </script>
 
     <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
-    <script type="importmap">
-    {
-        "imports": {
-        "@splinetool/runtime": "https://unpkg.com/@splinetool/runtime@0.9.123/build/runtime.js"
-        }
-    }
-    </script>
     <script type="module" src="src/index.js"></script> 
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
   </body>

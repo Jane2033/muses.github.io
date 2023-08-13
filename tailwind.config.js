@@ -24,6 +24,7 @@ export default {
       },
       spacing: {
         '85vh': '85vh',
+        '110vh': '110vh',
         '150vh': '150vh',
         '200vh': '200vh',
         '250vh': '250vh',
@@ -37,9 +38,6 @@ export default {
         '8': 'repeat(8, minmax(0, 0.5fr))',
         '12': 'repeat(12, minmax(0, 1fr))',
       },
-      backgroundImage: {
-        'circle': "url('/img/circle.svg')",
-      },
       borderRadius:{
         'large': '40px',
       },
@@ -48,6 +46,12 @@ export default {
       },
       zIndex: {
         '1': '1',
+      },
+      backgroundImage: {
+        'bags': "url('/src/img/bags.jpg')",
+        'clothes': "url('/src/img/clothes.png')",
+        'acc': "url('/src/img/acc.png')",
+        'bg1': "url('/src/img/bg_1.png')",
       }
     },
   },
