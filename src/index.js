@@ -31,7 +31,7 @@ headerCover.to(svg, {
 });
 headerCover.to(".loader-wraper", {
   y: -1500,
-}).tl.to(".loader-wraper", {
+}).to(".loader-wraper", {
   zIndex: -1,
   display: "none",
 });
@@ -45,33 +45,50 @@ headerCover.from(
 );
 
 
+let tl = gsap.timeline({      
+  scrollTrigger: {
+  trigger: ".section2",        
+  start: "top bottom",
+  end: "top top",       
+  scrub: true,
+  },      
+});
 
-
-
-/*
-    let tl = gsap.timeline({      
-      scrollTrigger: {
-        trigger: ".loader-wrapper",        
-        start: "top bottom",
-        endTrigger: ".loader-wrapper",
-        end: "top top",        
-        scrub: true,
-      },
-      
+tl.from(
+  ".bg-bags, .bg-clothes, .bg-acc", 
+  {
+    duration: 0.8,
+    opacity: 0,
+  }).from(
+    ".mydivide, .cta,.info, .number, .item", 
+    {
+      duration: 1.5,
+      y: 200,
+      opacity: 0,
     });
 
-    tl.to(svg, {
-      duration: 0.8,
-      attr: { d: curve },
-      ease: "power2.easeIn",
-    }).to(svg, {
-      duration: 0.8,
-      attr: { d: flat },
-      ease: "power2.easeOut",
-    }).tl.to(".loader-wrap", {
-      y: -1500,
-    });
-*/
+
+
+
+let tl2 = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".grid-container",
+    start: "top bottom",
+    end: "top center",
+    scrub: true,
+  },
+});
+
+tl2.from(
+  ".gridLayer",
+  {
+    duration: 0.8,
+    opacity: 0,
+    y: 200,
+  }
+)
+
+  
 
 
 

@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./*.{html,js}"],
+  content: [
+    "./*.{html,js}",
+    "./node_modules/tw-elements/dist/js/**/*.js"
+  ],
   theme: {
     fontFamily: {
       'Poppins': ['Poppins', 'sans-serif'],
@@ -23,13 +26,18 @@ export default {
         },
       },
       spacing: {
+        '50vh': '50vh',
         '85vh': '85vh',
         '110vh': '110vh',
         '150vh': '150vh',
         '200vh': '200vh',
         '250vh': '250vh',
         '300vh': '300vh',
+        '400vh': '400vh',
         '500vh': '500vh',
+        '70vw': '70vw',
+        '60vw': '60vw',
+        '100vw': '100vw',
         '120%': '120%',
         '10%': '10%',
         '15%': '15%',
@@ -55,5 +63,5 @@ export default {
       }
     },
   },
-  plugins: [],
+  plugins: [require("tw-elements/dist/plugin.cjs")],
 }
