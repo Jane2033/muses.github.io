@@ -44,7 +44,21 @@ header{
 
 
 
+.close{
+    @apply flex flex-col h-screen fixed top-0 -right-96;
+}
 
+.open{
+    @apply flex flex-col h-screen fixed top-0 right-0;
+}
+
+.close-overlay{
+    @apply hidden;
+}
+
+.open-overlay{
+    @apply block;
+}
 
 
 

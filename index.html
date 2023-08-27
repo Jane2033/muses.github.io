@@ -13,9 +13,9 @@
     <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+    
   </head>
-    <body class="relative">
+    <body class="relative overflow-x-hidden">
         <div class="loader-wraper w-full h-screen absolute z-[100] flex flex-col justify-center items-center bg-transparent overflow-hidden">
                 <svg class="absolute top-0 w-full h-110vh" viewBox="0 0 1000 1000" preserveAspectRatio="none">
                     <path id="svg" fill="url(#paint0_linear_1_4)" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
@@ -32,40 +32,43 @@
                 </div>
         </div>
         <div class="main-container relative w-full flex flex-col justify-center">
-            <header>
-                <div id="mobile" class="flex justify-between items-baseline pt-4 pb-2 px-8 bg-gradient-to-b from-black/20 to-black/0 backdrop-blur-md border-b border-white/70 shadow-md lg:hidden">
+            <header id="mobile" class="relative">
+                <div class="absolute z-[1044] w-full flex justify-between items-baseline pt-4 pb-2 px-8 bg-gradient-to-b from-black/20 to-black/0 backdrop-blur-md border-b border-white/70 shadow-md lg:hidden">
                     <a class="text-4xl font-bold font-funkydori" href="#Home">Muses</a>
-                    <button class="px-2 pt-2 pb-1 transition duration-150 ease-in-out border border-white/0 hover:border-white/100 rounded-full" type="button" data-te-offcanvas-toggle data-te-target="#offcanvasRight" aria-controls="offcanvasRight">
+                    <button class="btn-menu px-2 pt-2 pb-1" type="button">
                         <i class='bx bx-menu text-3xl'></i>
-                  </button>
+                    </button>
                 </div>
-                <div class="invisible fixed bottom-0 right-0 top-0 z-[1045] w-full md:w-96 h-screen translate-x-full flex-col transition duration-300 ease-in-out [&[data-te-offcanvas-show]]:transform-none" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" data-te-offcanvas-init>
-                    <div class="flex items-center justify-end p-4 bg-purple-350">
-                        <button type="button" class="" data-te-offcanvas-dismiss>
-                            <span><i class='bx bx-x text-4xl'></i></span>
-                        </button>
-                    </div>
-                    <div class="offcanvas-body flex flex-col justify-between items-center overflow-hidden p-4 bg-gradient-to-b from-purple-350 to-pink-200 text-white w-full h-screen">
-                        <ul class="flex flex-col justify-between items-center">
-                            <li class="text-lg tracking-wider py-2 m-5 group cursor-pointer relative">
-                                <div class="w-full h-0.5 bg-white absolute bottom-1 left-0 scale-x-0 group-hover:scale-x-100 transition duration-300 ease-in-out"></div>
-                                <a href="#about" class="relative">關於我們</a>
-                            </li>
-                            <li class="text-lg tracking-wider py-2 m-5 group relative">
-                                <div class="w-full h-0.5 bg-white absolute bottom-1 left-0 scale-x-0 group-hover:scale-x-100 transition duration-300 ease-in-out"></div>
-                                <a href="#products" class="relative">暢銷商品</a>
-                            </li>
-                            <li class="text-lg tracking-wider py-2 m-5 group relative">
-                                <div class="w-full h-0.5 bg-white absolute bottom-1 left-0 scale-x-0 group-hover:scale-x-100 transition duration-300 ease-in-out"></div>
-                                <a href="#ootd" class="relative">穿搭推薦</a>
-                            </li>
-                        </ul>			
-                        <div class="text-white text-lg bg-pink-550 hover:bg-pink-500 flex justify-center items-center w-full py-4 rounded-md cursor-pointer">
-                            <a href="#" class="px-2" target="_blank">前往商城</a>
-                            <i class='bx bx-link-external'></i>
+                <div class="absolute z-[1045] w-full h-screen flex">
+                    <div id="overlay" class="w-full h-screen bg-black/25 close-overlay"></div>
+                    <div id="offcanva" class="close">
+                        <div class="relative flex flex-col justify-between items-center overflow-hidden p-4 bg-gradient-to-b from-purple-350 to-pink-200 text-white w-full h-screen">
+                            <div class="flex flex-col items-start justify-start">
+                                <button id="close" type="button" class="btn-menu">
+                                    <i class='bx bx-x text-4xl p-12'></i>
+                                </button>
+                                <ul class="flex flex-col justify-between items-center">
+                                    <li class="text-lg tracking-wider py-2 m-5 group cursor-pointer relative">
+                                        <div class="w-full h-0.5 bg-white absolute bottom-1 left-0 scale-x-0 group-hover:scale-x-100 transition duration-300 ease-in-out"></div>
+                                        <a href="#about" class="relative">關於我們</a>
+                                    </li>
+                                    <li class="text-lg tracking-wider py-2 m-5 group relative">
+                                        <div class="w-full h-0.5 bg-white absolute bottom-1 left-0 scale-x-0 group-hover:scale-x-100 transition duration-300 ease-in-out"></div>
+                                        <a href="#products" class="relative">暢銷商品</a>
+                                    </li>
+                                    <li class="text-lg tracking-wider py-2 m-5 group relative">
+                                        <div class="w-full h-0.5 bg-white absolute bottom-1 left-0 scale-x-0 group-hover:scale-x-100 transition duration-300 ease-in-out"></div>
+                                        <a href="#ootd" class="relative">穿搭推薦</a>
+                                    </li>
+                                </ul> 
+                            </div>          
+                            <div class="text-white text-lg bg-pink-550 hover:bg-black flex justify-center items-center w-full py-4 cursor-pointer">
+                                <a href="#" class="px-2" target="_blank">前往商城</a>
+                                <i class='bx bx-link-external'></i>
+                            </div>
                         </div>
                     </div>
-              </div>
+                </div>
             </header>
             <header id="laptop" class="bg-gradient-to-b from-black/20 to-black/0 backdrop-blur-md border-b border-white/70 shadow-md">
                 <div class="hidden lg:flex justify-between items-baseline px-5 py-2 mx-16">
@@ -97,262 +100,190 @@
                 <div class="w-120% -left-10% -top-10% h-screen absolute">
                     <div id="scene" class="absolute top-0 left-0 w-full">
                         <div data-depth-x="0.2" class="absolute top-0 left-0 z-20">
-                            <img src="src/img/bg_2.png" class="h-screen w-full object-cover sm:h-auto" id="bg2">
+                            <img src="./src/img/bg_3.png" class="h-screen w-full object-cover sm:h-auto" id="bg2">
                         </div>
                         <div data-depth-x="0.4" class="absolute top-0 left-0 z-10">
-                            <img src="src/img/bg_1.png" class="h-screen w-full object-cover sm:h-auto" id="bg1">
+                            <img src="./src/img/bg_1.png" class="h-screen w-full object-cover sm:h-auto" id="bg1">
                         </div>
                     </div>
-                    <div class="absolute top-8 left-0 z-30 h-screen w-full flex mx-4 md:grid md:grid-cols-12 md:grid-rows-4">
+                    <div class="absolute top-8 left-0 z-30 h-screen w-full flex mx-4 lg:grid lg:grid-cols-12 lg:grid-rows-4">
                         <div class="w-full bg-white/30 backdrop-blur-sm md:bg-transparent md:backdrop-blur-0 md:col-span-5 md:col-start-2 md:row-start-2 relative">
                             <div class="flex flex-col justify-start mx-16">
                                 <h1 class="my-4 text-pink-950 text-4xl md:text-3xl lg:text-5xl font-light tracking-wider leading-normal">質感至上，風格無限<br>獨特風采自由定義</h1>
                                 <p class="my-4 text-pink-950 text-base font-Noto Sans tracking-wide flex-wrap leading-normal">融合時尚、優雅、獨特，為你呈現一場穿越風格與個性的時尚之旅，每季新品都給你驚喜與新鮮感，無論你是追求經典風格還是喜歡突破嘗試，我們總有一款適合你。</p>
                                 <div class="my-4 flex justify-start items-center">
-                                    <p class=" bg-pink-550 hover:bg-pink-500 text-white font-Noto Sans text-base tracking-wider px-8 py-4 mr-8 cursor-pointer">加入會員</p>
+                                    <p class=" bg-pink-550 hover:bg-black text-white font-Noto Sans text-base tracking-wider px-8 py-4 mr-8 cursor-pointer">加入會員</p>
                                 </div>
                             </div>
                         </div>
-                        <canvas id="canvas3d" class="hidden md:grid md:col-span-5 md:col-start-7 md:row-start-1 md:row-span-4"></canvas>
+                        <canvas id="canvas3d" class="hidden lg:grid lg:col-span-5 lg:col-start-7 lg:row-start-1 lg:row-span-4"></canvas>
                     </div>
                 </div>
             </div>
-          <div class="bg-pink-50 w-full flex flex-col md:flex-row section2">
-                <div class="bg-bags bg-cover w-full md:w-1/3 h-50vh md:h-screen flex flex-col justify-center items-center">
-                    <div class="w-full h-screen backdrop-blur-sm flex flex-col justify-center items-center">
-                        <div class="item bg-red-50 w-2/3 h-2/3 p-8 rounded-tl-full rounded-tr-full flex flex-col justify-center items-center group">
+            <div id="s2-laptop" class="">
+                <div class="flex justify-center items-center w-full h-screen lg:h-150vh">
+                    <div class="w-full lg:w-8/12 h-screen lg:h-150vh relative">
+                        <div class="h-full absolute -inset-0 z-10 bg-gradient-to-b from-white/50 via-white/0 to-white/50"></div>
+                        <div class="absolute z-20 w-full h-full flex flex-col justify-center items-center text-white">
                             <div class="flex flex-col justify-center items-center my-4">
-                                <span class="item font-quiche text-base my-4">/ Bags /</span>
+                                <span class="item font-quiche text-xl my-4">/ Clothes /</span>
+                                <h2 class="item text-3xl tracking-wider  my-4">衣著</h2>                   
+                            </div>
+                            <div class="mydivide  border-black py-2 flex flex-col items-center justify-between">
+                                <img src="./src/img/starwhite.png" width="30px">
+                                <p class="number font-quiche text-9xl my-4">01</p>
+                                <p class="info text-base mb-6">從經典款到潮流款，多樣化的單品滿足你不同的風格需求。</p>
+                                <button class="cta w-full flex justify-center items-center font-quiche text-base py-4 px-3 mb-4 bg-white/15 backdrop-blur-sm border-2 hover:border-black border-white text-white hover:bg-black transition duration-300 ease-in-out">
+                                    <a href="#" class="pr-2 tracking-wider">商品目錄</a>
+                                    <i class='bx bx-link-external cursor-pointer'></i>
+                                </button> 
+                            </div>                                
+                        </div>
+                        <video class="w-full h-full object-cover" src="./src/img/clothescolletion.mp4" autoplay loop muted></video>
+                    </div>
+                    <div class="flex-col w-4/12 h-150vh bg-[#f8f8f8] hidden lg:flex">
+                        <div class="w-full h-1/3 relative flex flex-col justify-center items-end transition ease-in-out duration-300 group cursor-pointer">
+                            <img class="w-full h-4/5 object-contain group-hover:hidden" src="./src/img/bestseller-1-1.jpg">
+                            <img class="w-full h-4/5 object-contain group-hover:block hidden" src="./src/img/bestseller-1-2.jpg">
+                            <div class="flex flex-col justify-center items-center w-full h-1/5 text-black text-base px-4 border-y border-black">
+                                <h1 class="pb-2">V領羊絨毛衣</h1>
+                                <p>NT$60000</p>                                 
+                            </div>
+                        </div>
+                        <div class="w-full h-1/3 relative flex flex-col justify-center items-end transition ease-in-out duration-300 group cursor-pointer">
+                            <img class="w-full h-4/5 object-contain group-hover:hidden" src="./src/img/bestseller-2-1.jpg">
+                            <img class="w-full h-4/5 object-contain group-hover:block hidden" src="./src/img/bestseller-2-2.jpg">
+                            <div class="flex flex-col justify-center items-center w-full h-1/5 text-black text-base px-4 border-y border-black bg-[#f8f8f8]">
+                                <h1 class="pb-2">珠地呢迷你裙</h1>
+                                <p>NT$24000</p>                                 
+                            </div>
+                        </div>
+                        <div class="w-full h-1/3 relative flex flex-col justify-center items-end transition ease-in-out duration-300 group cursor-pointer">
+                            <img class="w-full h-4/5 object-contain group-hover:hidden" src="./src/img/bestseller-3-1.jpg">
+                            <img class="w-full h-4/5 object-contain group-hover:block hidden" src="./src/img/bestseller-3-2.jpg">
+                            <div class="flex flex-col justify-center items-center w-full h-1/5 text-black text-base px-4 border-t border-black bg-[#f8f8f8]">
+                                <h1 class="pb-2">刺繡棉質T恤</h1>
+                                <p>NT$24000</p>                                 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center items-center w-full h-screen lg:h-150vh">
+                    <div class="lg:flex flex-col w-4/12 hidden lg:h-150vh bg-[#f8f8f8]">
+                        <div class="w-full h-1/3 relative flex flex-col justify-center items-end transition ease-in-out duration-300 group cursor-pointer">
+                            <img class="w-full h-4/5 object-contain group-hover:hidden" src="./src/img/bestseller-4-1.jpg">
+                            <img class="w-full h-4/5 object-contain group-hover:block hidden" src="./src/img/bestseller-4-2.jpg">
+                            <div class="flex flex-col justify-center items-center w-full h-1/5 text-black text-base px-4 border-y border-black">
+                                <h1 class="pb-2">絎縫拉鍊肩背包</h1>
+                                <p>NT$44000</p>                                 
+                            </div>
+                        </div>
+                        <div class="w-full h-1/3 relative flex flex-col justify-center items-end transition ease-in-out duration-300 group cursor-pointer">
+                            <img class="w-full h-4/5 object-contain group-hover:hidden" src="./src/img/bestseller-5-1.jpg">
+                            <img class="w-full h-4/5 object-contain group-hover:block hidden" src="./src/img/bestseller-5-2.jpg">
+                            <div class="flex flex-col justify-center items-center w-full h-1/5 text-black text-base px-4 border-y border-black bg-[#f8f8f8]">
+                                <h1 class="pb-2">皮革肩背包</h1>
+                                <p>NT$47000</p>                                 
+                            </div>
+                        </div>
+                        <div class="w-full h-1/3 relative flex flex-col justify-center items-end transition ease-in-out duration-300 group cursor-pointer">
+                            <img class="w-full h-4/5 object-contain group-hover:hidden" src="./src/img/bestseller-6-1.jpg">
+                            <img class="w-full h-4/5 object-contain group-hover:block hidden" src="./src/img/bestseller-6-2.jpg">
+                            <div class="flex flex-col justify-center items-center w-full h-1/5 text-black text-base px-4 border-t border-black bg-[#f8f8f8]">
+                                <h1 class="pb-2">雅緻皮革包</h1>
+                                <p>NT$44000</p>                                 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full lg:w-8/12 h-screen lg:h-150vh relative">
+                        <div class="h-full absolute -inset-0 z-10 bg-gradient-to-b from-white/50 via-white/0 to-white/50"></div>
+                        <div class="absolute z-20 w-full h-full flex flex-col justify-center items-center text-white">
+                            <div class="flex flex-col justify-center items-center my-4">
+                                <span class="item font-quiche text-xl my-4">/ Bags /</span>
                                 <h2 class="item text-3xl tracking-wider  my-4">包款</h2>                   
                             </div>
                             <div class="mydivide  border-black py-2 flex flex-col items-center justify-between">
-                                <img src="/src/img/star.png" width="30px">
-                                <p class="number font-quiche text-9xl my-4">01</p>
-                                <p class="info text-xs mb-6">生活必備單品，精緻且現代的設計，提升整體造型的時尚感。</p>
-                                
-                            </div>                                
-                            <button class="cta w-full flex justify-center items-center font-quiche text-base py-4 px-3 mb-4 bg-black text-white hover:bg-pink-550 transition duration-300 ease-in-out">
-                                <a href="#" class="pr-2 tracking-wider">商品目錄</a>
-                                <i class='bx bx-link-external cursor-pointer'></i>
-                            </button> 
-                        </div>  
-                    </div>
-                </div>
-                <div class="bg-clothes bg-cover w-full md:w-1/3 h-50vh md:h-screen flex flex-col justify-center items-center">
-                    <div class="w-full h-screen backdrop-blur-sm flex flex-col justify-center items-center">
-                        <div class="item bg-red-50 w-2/3 h-2/3 p-8 rounded-tl-full rounded-tr-full flex flex-col justify-center items-center group">
-                            <div class="flex flex-col justify-center items-center my-4">
-                                <span class="item font-quiche text-base my-4">/ Clothes /</span>
-                                <h2 class="item text-3xl tracking-wider  my-4">衣著</h2>                   
-                            </div>
-                            <div class="mydivide border-black py-2 flex flex-col items-center justify-between">
-                                <img src="/src/img/star.png" width="30px">
+                                <img src="./src/img/starwhite.png" width="30px">
                                 <p class="number font-quiche text-9xl my-4">02</p>
-                                <p class="info text-xs mb-6">從經典款到潮流款，多樣化的單品滿足你不同的風格需求。</p>
+                                <p class="info text-base mb-6">生活必備單品，精緻且現代的設計，提升整體造型的時尚感。</p>
+                                <button class="cta w-full flex justify-center items-center font-quiche text-base py-4 px-3 mb-4 bg-white/15 backdrop-blur-sm border-2 hover:border-black border-white text-white hover:bg-black transition duration-300 ease-in-out">
+                                    <a href="#" class="pr-2 tracking-wider">商品目錄</a>
+                                    <i class='bx bx-link-external cursor-pointer'></i>
+                                </button> 
                             </div>                                
-                            <button class="cta w-full flex justify-center items-center font-quiche text-base py-4 px-3 mb-4 bg-black text-white hover:bg-pink-550 transition duration-300 ease-in-out">
-                                <a href="#" class="pr-2 tracking-wider">商品目錄</a>
-                                <i class='bx bx-link-external cursor-pointer'></i>
-                            </button> 
-                        </div>  
+                        </div>
+                        <video class="w-full h-full object-cover" src="./src/img/bagcollection.mp4" autoplay loop muted></video>
                     </div>
                 </div>
-                <div class="bg-acc bg-cover w-full md:w-1/3 h-85vh md:h-screen flex flex-col justify-center items-center">
-                    <div class="w-full h-screen backdrop-blur-sm flex flex-col justify-center items-center">
-                        <div class="item bg-red-50 w-2/3 h-2/3 p-8 rounded-tl-full rounded-tr-full flex flex-col justify-center items-center group">
+                <div class="flex justify-center items-center w-full h-screen lg:h-150vh">
+                    <div class="w-full lg:w-8/12 h-screen lg:h-150vh relative">
+                        <div class="h-full absolute -inset-0 z-10 bg-gradient-to-b from-white/50 via-white/0 to-white/50"></div>
+                        <div class="absolute z-20 w-full h-full flex flex-col justify-center items-center text-white">
                             <div class="flex flex-col justify-center items-center my-4">
-                                <span class="item font-quiche text-base my-4">/ Accessories /</span>
+                                <span class="item font-quiche text-xl my-4">/ Accessories /</span>
                                 <h2 class="item text-3xl tracking-wider  my-4">配飾</h2>                   
                             </div>
-                            <div class="mydivide border-black py-2 flex flex-col items-center justify-between">
-                                <img src="/src/img/star.png" width="30px">
+                            <div class="mydivide  border-black py-2 flex flex-col items-center justify-between">
+                                <img src="./src/img/starwhite.png" width="30px">
                                 <p class="number font-quiche text-9xl my-4">03</p>
-                                <p class="info text-xs mb-6">從華麗的項鍊、精緻的耳環，到時尚的手錶和搭扣，每一款配飾都為你精心挑選。</p>
-                            </div>                               
-                            <button class="cta w-full flex justify-center items-center font-quiche text-base py-4 px-3 mb-4 bg-black text-white hover:bg-pink-550 transition duration-300 ease-in-out">
-                                <a href="#" class="pr-2 tracking-wider">商品目錄</a>
-                                <i class='bx bx-link-external cursor-pointer'></i>
-                            </button> 
-                        </div>  
+                                <p class="info text-base mb-6">華麗的項鍊到時尚的手錶搭扣，每一款配飾都為你精心挑選。</p>
+                                <button class="cta w-full flex justify-center items-center font-quiche text-base py-4 px-3 mb-4 bg-white/15 backdrop-blur-sm border-2 hover:border-black border-white text-white hover:bg-black transition duration-300 ease-in-out">
+                                    <a href="#" class="pr-2 tracking-wider">商品目錄</a>
+                                    <i class='bx bx-link-external cursor-pointer'></i>
+                                </button> 
+                            </div>                                
+                        </div>
+                        <video class="w-full h-full object-cover" src="./src/img/acccollection.mp4" autoplay loop muted></video>
                     </div>
-                </div>                  
-            </div>
-            
-                <div class="grid-container w-full bg-[#F9F9F9]">
-                    <div class="mygrid grid grid-cols-3 grid-rows-3 mt-4">
-                        <div class="gridLayer group relative">
-                            <div class="hidden group-hover:flex absolute top-0 right-0 items-center px-2">
-                                <a href="#" class="pr-2 tracking-wider">暸解更多</a>
-                                <i class='bx bx-link-external cursor-pointer'></i>
-                            </div>
-                            <div class="gridBlock block group-hover:hidden transition ease-in-out duration-300"><img src="src/img/bestseller-1-1.jpg"></div>
-                            <div class="gridBlock hidden group-hover:block transition ease-in-out duration-300"><img src="src/img/bestseller-1-2.jpg"></div>
-                            <div class="hidden group-hover:block absolute bottom-0 left-0 w-full bg-black text-white transition ease-in-out duration-300">
-                                <div class="flex justify-between items-center m-4 px-4 text-xl">
-                                    <h1>V領羊絨毛衣</h1>
-                                    <h1>NT$60000</h1>
-                                </div>
-                                <div class="text-base text-white flex justify-between items-center m-4">
-                                    <p class="px-4">條紋羊絨毛衣寬鬆剪裁具時尚魅力</p>
-                                </div>                                    
+                    <div class="lg:flex flex-col w-4/12 hidden lg:h-150vh bg-[#f8f8f8]">
+                        <div class="w-full h-1/3 relative flex flex-col justify-center items-end transition ease-in-out duration-300 group cursor-pointer">
+                            <img class="w-full h-4/5 object-contain group-hover:hidden" src="./src/img/bestseller-7-1.jpg">
+                            <img class="w-full h-4/5 object-contain group-hover:block hidden" src="./src/img/bestseller-7-2.jpg">
+                            <div class="flex flex-col justify-center items-center w-full h-1/5 text-black text-base px-4 border-y border-black">
+                                <h1 class="pb-2">新月鍍白金色手鐲</h1>
+                                <p>NT$5400</p>                                 
                             </div>
                         </div>
-                        <div class="gridLayer group relative">
-                            <div class="hidden group-hover:flex absolute top-0 right-0 items-center px-2">
-                                <a href="#" class="pr-2 tracking-wider">暸解更多</a>
-                                <i class='bx bx-link-external cursor-pointer'></i>
-                            </div>
-                            <div class="gridBlock block group-hover:hidden transition ease-in-out duration-300"><img src="src/img/bestseller-2-1.jpg"></div>
-                            <div class="gridBlock hidden group-hover:block transition ease-in-out duration-300"><img src="src/img/bestseller-2-2.jpg"></div>
-                            <div class="hidden group-hover:block absolute bottom-0 left-0 w-full bg-black text-white transition ease-in-out duration-300">
-                                <div class="flex justify-between items-center m-4 px-4 text-xl">
-                                    <h1>珠地呢迷你裙</h1>
-                                    <h1>NT$24000</h1>
-                                </div>
-                                <div class="text-base text-white flex justify-between items-center m-4">
-                                    <p class="px-4">經典款式高雅細節重新演繹</p>
-                                </div>                                    
+                        <div class="w-full h-1/3 relative flex flex-col justify-center items-end transition ease-in-out duration-300 group cursor-pointer">
+                            <img class="w-full h-4/5 object-contain group-hover:hidden" src="./src/img/bestseller-8-1.jpg">
+                            <img class="w-full h-4/5 object-contain object-right group-hover:block hidden" src="./src/img/bestseller-8-2.jpg">
+                            <div class="flex flex-col justify-center items-center w-full h-1/5 text-black text-base px-4 border-y border-black bg-[#f8f8f8]">
+                                <h1 class="pb-2">斯堪地納維亞純銀耳環</h1>
+                                <p>NT$10000</p>                                 
                             </div>
                         </div>
-                        <div class="gridLayer group relative">
-                            <div class="hidden group-hover:flex absolute top-0 right-0 items-center px-2">
-                                <a href="#" class="pr-2 tracking-wider">暸解更多</a>
-                                <i class='bx bx-link-external cursor-pointer'></i>
-                            </div>
-                            <div class="gridBlock block group-hover:hidden transition ease-in-out duration-300"><img src="src/img/bestseller-3-1.jpg"></div>
-                            <div class="gridBlock hidden group-hover:block transition ease-in-out duration-300"><img src="src/img/bestseller-3-2.jpg"></div>
-                            <div class="hidden group-hover:block absolute bottom-0 left-0 w-full bg-black text-white transition ease-in-out duration-300">
-                                <div class="flex justify-between items-center m-4 px-4 text-xl">
-                                    <h1>刺繡棉質T恤</h1>
-                                    <h1>NT$24000</h1>
-                                </div>
-                                <div class="text-base text-white flex justify-between items-center m-4">
-                                    <p class="px-4">輕巧布料及玩味設計完美迎合夏天</p>
-                                </div>                                    
-                            </div>
-                        </div>
-                        <div class="gridLayer group relative">
-                            <div class="hidden group-hover:flex absolute top-0 right-0 items-center px-2">
-                                <a href="#" class="pr-2 tracking-wider">暸解更多</a>
-                                <i class='bx bx-link-external cursor-pointer'></i>
-                            </div>
-                            <div class="gridBlock block group-hover:hidden transition ease-in-out duration-300"><img src="src/img/bestseller-4-1.jpg"></div>
-                            <div class="gridBlock hidden group-hover:block transition ease-in-out duration-300"><img src="src/img/bestseller-4-2.jpg"></div>
-                            <div class="hidden group-hover:block absolute bottom-0 left-0 w-full bg-black text-white transition ease-in-out duration-300">
-                                <div class="flex justify-between items-center m-4 px-4 text-xl">
-                                    <h1>斜紋布束腰外套</h1>
-                                    <h1>NT$60000</h1>
-                                </div>
-                                <div class="text-base text-white flex justify-between items-center m-4">
-                                    <p class="px-4">多個口袋與時尚優雅的設計華實兼備</p>
-                                </div>                                    
-                            </div>
-                        </div>
-                        <div class="gridLayer group relative">
-                            <div class="hidden group-hover:flex absolute top-0 right-0 items-center px-2">
-                                <a href="#" class="pr-2 tracking-wider">暸解更多</a>
-                                <i class='bx bx-link-external cursor-pointer'></i>
-                            </div>
-                            <div class="gridBlock block group-hover:hidden transition ease-in-out duration-300"><img src="src/img/bestseller-5-1.jpg"></div>
-                            <div class="gridBlock hidden group-hover:block transition ease-in-out duration-300"><img src="src/img/bestseller-5-2.jpg"></div>
-                            <div class="hidden group-hover:block absolute bottom-0 left-0 w-full bg-black text-white transition ease-in-out duration-300">
-                                <div class="flex justify-between items-center m-4 px-4 text-xl">
-                                    <h1>斜紋布短褲</h1>
-                                    <h1>NT$32500</h1>
-                                </div>
-                                <div class="text-base text-white flex justify-between items-center m-4">
-                                    <p class="px-4">輕巧斜紋布短褲呈現天然效果</p>
-                                </div>                                    
-                            </div>
-                        </div>
-                        <div class="gridLayer group relative">
-                            <div class="hidden group-hover:flex absolute top-0 right-0 items-center px-2">
-                                <a href="#" class="pr-2 tracking-wider">暸解更多</a>
-                                <i class='bx bx-link-external cursor-pointer'></i>
-                            </div>
-                            <div class="gridBlock block group-hover:hidden transition ease-in-out duration-300"><img src="src/img/bestseller-6-1.jpg"></div>
-                            <div class="gridBlock hidden group-hover:block transition ease-in-out duration-300"><img src="src/img/bestseller-6-2.jpg"></div>
-                            <div class="hidden group-hover:block absolute bottom-0 left-0 w-full bg-black text-white transition ease-in-out duration-300">
-                                <div class="flex justify-between items-center m-4 px-4 text-xl">
-                                    <h1>條紋布連身裙</h1>
-                                    <h1>NT$60000</h1>
-                                </div>
-                                <div class="text-base text-white flex justify-between items-center m-4">
-                                    <p class="px-4">由高品質的人造纖維材質製成，質感柔軟舒適，穿著舒適。</p>
-                                </div>                                    
-                            </div>
-                        </div>
-                        <div class="gridLayer group relative">
-                            <div class="hidden group-hover:flex absolute top-0 right-0 items-center px-2">
-                                <a href="#" class="pr-2 tracking-wider">暸解更多</a>
-                                <i class='bx bx-link-external cursor-pointer'></i>
-                            </div>
-                            <div class="gridBlock block group-hover:hidden transition ease-in-out duration-300"><img src="src/img/bestseller-7-1.jpg"></div>
-                            <div class="gridBlock hidden group-hover:block transition ease-in-out duration-300"><img src="src/img/bestseller-7-2.jpg"></div>
-                            <div class="hidden group-hover:block absolute bottom-0 left-0 w-full bg-black text-white transition ease-in-out duration-300">
-                                <div class="flex justify-between items-center m-4 px-4 text-xl">
-                                    <h1>雅緻皮革包</h1>
-                                    <h1>NT$80000</h1>
-                                </div>
-                                <div class="text-base text-white flex justify-between items-center m-4">
-                                    <p class="px-4">高質感的優質皮革製成，優雅的設計和精細的手工配飾。</p>
-                                </div>                                    
-                            </div>
-                        </div>
-                        <div class="gridLayer group relative">
-                            <div class="hidden group-hover:flex absolute top-0 right-0 items-center px-2">
-                                <a href="#" class="pr-2 tracking-wider">暸解更多</a>
-                                <i class='bx bx-link-external cursor-pointer'></i>
-                            </div>
-                            <div class="gridBlock block group-hover:hidden transition ease-in-out duration-300"><img src="src/img/bestseller-8-1.jpg"></div>
-                            <div class="gridBlock hidden group-hover:block transition ease-in-out duration-300"><img src="src/img/bestseller-8-2.jpg"></div>
-                            <div class="hidden group-hover:block absolute bottom-0 left-0 w-full bg-black text-white transition ease-in-out duration-300">
-                                <div class="flex justify-between items-center m-4 px-4 text-xl">
-                                    <h1>斯圖爾特跟鞋</h1>
-                                    <h1>NT$60000</h1>
-                                </div>
-                                <div class="text-base text-white flex justify-between items-center m-4">
-                                    <p class="px-4">設計簡潔優雅，搭配細跟和簡潔的前掌，展現女性的高雅氣質。</p>
-                                </div>                                    
-                            </div>
-                        </div>
-                        <div class="gridLayer group relative">
-                            <div class="hidden group-hover:flex absolute top-0 right-0 items-center px-2">
-                                <a href="#" class="pr-2 tracking-wider">暸解更多</a>
-                                <i class='bx bx-link-external cursor-pointer'></i>
-                            </div>
-                            <div class="gridBlock block group-hover:hidden transition ease-in-out duration-300"><img src="src/img/bestseller-9-1.jpg"></div>
-                            <div class="gridBlock hidden group-hover:block transition ease-in-out duration-300"><img src="src/img/bestseller-9-2.jpg"></div>
-                            <div class="hidden group-hover:block absolute bottom-0 left-0 w-full bg-black text-white transition ease-in-out duration-300">
-                                <div class="flex justify-between items-center m-4 px-4 text-xl">
-                                    <h1>高清抗藍光眼鏡</h1>
-                                    <h1>NT$80000</h1>
-                                </div>
-                                <div class="text-base text-white flex justify-between items-center m-4">
-                                    <p class="px-4">採用時尚的設計，鏡框輕巧舒適，適合長時間佩戴。</p>
-                                </div>                                    
+                        <div class="w-full h-1/3 relative flex flex-col justify-center items-end transition ease-in-out duration-300 group cursor-pointer">
+                            <img class="w-full h-4/5 object-contain group-hover:hidden" src="./src/img/bestseller-9-1.jpg">
+                            <img class="w-full h-4/5 object-contain group-hover:block hidden" src="./src/img/bestseller-9-2.jpg">
+                            <div class="flex flex-col justify-center items-center w-full h-1/5 text-black text-base px-4 border-t border-black bg-[#f8f8f8]">
+                                <h1 class="pb-2">高清抗藍光眼鏡</h1>
+                                <p>NT$8000</p>                                 
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
 
 
-            <div id="ootd-sm" class="md:hidden flex flex-col justify-center items-center">
+
+
+            <div id="ootd-sm" class="lg:hidden flex flex-col justify-center items-center">
                 <h1 class="text-4xl font-quiche font-bold p-5">Outfit of the day</h1>
                 <div class="m-8">
-                    <div class="m-8 h-85vh">
-                        <img src="src/img/ootd-1.jpg" class="h-3/4 object-cover rounded-2xl">            
-                        <div class="my-6 mx-1 flex justify-between items-baseline">
-                            <h1 class="font-quiche text-3xl italic mr-5">01 /</h1>
-                            <button class="flex font-quiche text-2xl py-2 hover:text-gray-500 transition-colors">
-                                <span class="px-1 ml-2">Lookbook</span>
-                                <i class='bx bx-right-arrow-alt text-xl px-1 mr-1'></i>
-                            </button>                        
+                    <div class="m-8 h-85vh w-full">
+                        <img src="./src/img/ootd-1.jpg" class="w-full h-3/4 object-cover rounded-2xl">            
+                        <div class="my-6 w-full">
+                            <h1 class="font-quiche text-3xl italic">Mon. /</h1>
+                            <p class="px-4 text-lg">簡約而專業的穿搭，展現你的工作精神。</p>
+                            <button class="text-lg tracking-wider relative">
+                                <p class="py-2 tracking-widest">探索穿搭</p>
+                                <div class="w-full h-0.5 bg-black absolute bottom-1 left-0"></div>
+                            </button>                      
                         </div>
                     </div>
                     <div class="m-8 h-85vh">
-                        <img src="src/img/ootd-2.jpg" class="h-3/4 object-cover rounded-2xl">            
+                        <img src="./src/img/ootd-2.jpg" class="h-3/4 object-cover rounded-2xl">            
                         <div class="my-6 mx-1 flex justify-between items-baseline">
                             <h1 class="font-quiche text-3xl italic mr-5">02 /</h1>
                             <button class="flex justify-end font-quiche text-2xl py-2 hover:text-gray-500 transition-colors">
@@ -362,7 +293,7 @@
                         </div>
                     </div>
                     <div class="m-8 h-85vh">
-                        <img src="src/img/ootd-3-2.jpg" class="h-3/4 object-cover rounded-2xl">            
+                        <img src="./src/img/ootd-3-2.jpg" class="h-3/4 object-cover rounded-2xl">            
                         <div class="my-6 mx-1 flex justify-between items-baseline">
                             <h1 class="font-quiche text-3xl italic mr-5">03 /</h1>
                             <button class="flex justify-end font-quiche text-2xl py-2 hover:text-gray-500 transition-colors">
@@ -372,7 +303,7 @@
                         </div>
                     </div>
                     <div class="m-8 h-85vh">
-                        <img src="src/img/ootd-4.jpg" class="h-3/4 object-cover rounded-2xl">            
+                        <img src="./src/img/ootd-4.jpg" class="h-3/4 object-cover rounded-2xl">            
                         <div class="my-6 mx-1 flex justify-between items-baseline">
                             <h1 class="font-quiche text-3xl italic mr-5">04 /</h1>
                             <button class="flex justify-end font-quiche text-2xl py-2 hover:text-gray-500 transition-colors">
@@ -382,7 +313,7 @@
                         </div>
                     </div>
                     <div class="m-8 h-85vh">
-                        <img src="src/img/ootd-5.jpg" class="h-3/4 object-cover rounded-2xl">            
+                        <img src="./src/img/ootd-5.jpg" class="h-3/4 object-cover rounded-2xl">            
                         <div class="my-6 mx-1 flex justify-between items-baseline">
                             <h1 class="font-quiche text-3xl italic mr-5">05 /</h1>
                             <button class="flex justify-end font-quiche text-2xl py-2 hover:text-gray-500 transition-colors">
@@ -392,7 +323,7 @@
                         </div>
                     </div>
                     <div class="m-8 h-85vh">
-                        <img src="src/img/ootd-6.jpg" class="h-3/4 object-cover rounded-2xl">            
+                        <img src="./src/img/ootd-6.jpg" class="h-3/4 object-cover rounded-2xl">            
                         <div class="my-6 mx-1 flex justify-between items-baseline">
                             <h1 class="font-quiche text-3xl italic mr-5">06 /</h1>
                             <button class="flex justify-end font-quiche text-2xl py-2 hover:text-gray-500 transition-colors">
@@ -402,7 +333,7 @@
                         </div>
                     </div>
                     <div class="m-8 h-85vh">
-                        <img src="src/img/ootd-7.jpg" class="h-3/4 object-cover rounded-2xl">            
+                        <img src="./src/img/ootd-7.jpg" class="h-3/4 object-cover rounded-2xl">            
                         <div class="my-6 mx-1 flex justify-between items-baseline">
                             <h1 class="font-quiche text-3xl italic mr-5">07 /</h1>
                             <button class="flex justify-end font-quiche text-2xl py-2 hover:text-gray-500 transition-colors">
@@ -413,42 +344,54 @@
                     </div>
                 </div>
             </div>
-            <div id="ootd" class="hidden md:block">
+            <div id="ootd" class="hidden lg:block">
                 <div class="w-full h-85vh grid grid-cols-3" id="ootd-1">
-                    <div class="relative group flex justify-center items-center cursor-pointer overflow-hidden">
-                        <div class="h-85vh hidden absolute -inset-0 z-10 bg-white/60 group-hover:block backdrop-blur-sm transition-colors"></div>
-                        <button class="hidden absolute z-10 font-quiche md:text-lg xl:px-5 py-2 md:px-3 rounded-md group-hover:block hover:text-gray-700">
-                            <span class="px-1 ml-2">Lookbook</span>
-                            <i class='bx bx-right-arrow-alt md:text-base px-1 mr-1'></i>
-                        </button>
-                        <img src="src/img/ootd-1.jpg" class="absolute z-0 h-85vh object-cover group-hover:scale-110 transition duration-300 ease-in-out">         
+                    <div class="relative group flex justify-center items-end cursor-pointer overflow-hidden">
+                        <div class="h-85vh hidden absolute -inset-0 z-10 bg-gradient-to-b from-black/0 via-black/0 to-black group-hover:block transition-colors"></div>
+                        <div class="hidden absolute z-10 text-white m-8 md:text-lg group-hover:flex group-hover:flex-col items-center justify-center">
+                            <span class="px-1 font-quiche italic">— Monday —</span>
+                            <p class="text-base tracking-wider py-2 text-center">簡約而專業的穿搭，展現你的工作精神。</p>
+                            <button class="text-base tracking-wider relative">
+                                <p class="py-2 tracking-widest">探索穿搭</p>
+                                <div class="w-full h-0.5 bg-white absolute bottom-1 left-0 scale-x-0 group-hover:scale-x-100 transition duration-300 ease-in-out"></div>
+                            </button>
+                        </div>
+                        <img src="./src/img/ootd-1.jpg" class="absolute z-0 h-85vh object-cover group-hover:scale-110 transition duration-300 ease-in-out">         
                     </div>
                     <div class="flex justify-center items-center col-span-2 bg-gradient-to-br from-blue-150 via-purple-350 to-pink-450 h-85vh">
-                        <img src="src/img/ootd-title.png" class="w-3/4">
+                        <img src="./src/img/ootd-title.png" class="w-3/4">
                     </div>
                 </div>
                 <div class="w-full h-85vh grid grid-cols-3" id="ootd-2">
                     <div class="flex flex-col justify-center items-center bg-blue-150 h-85vh">
                         <h2 class="m-8 font-quiche text-2xl italic">Orchid</h2>
-                        <img src="src/img/moon.png" width="30px" class="m-8">
+                        <img src="./src/img/moon.png" width="30px" class="m-8">
                         <p class="m-8 font-quiche text-xs text-center">It symbolizes proud and glorious femininity.</p>
                     </div>
-                    <div class="h-85vh relative group cursor-pointer overflow-hidden">
-                        <div class="h-85vh hidden absolute z-10 -inset-0 bg-white/60 group-hover:block backdrop-blur-sm transition-colors"></div>
-                        <button class="hidden absolute z-10 top-1/2 left-1/4 font-quiche md:text-lg xl:px-5 py-2 md:px-3 xl:ml-10 group-hover:block hover:text-gray-700 transition-colors">
-                            <span class="px-1 ml-2">Lookbook</span>
-                            <i class='bx bx-right-arrow-alt md:text-base px-1 mr-1'></i>
-                        </button>
-                        <img src="src/img/ootd-2.jpg" class="absolute z-0 h-85vh object-cover group-hover:scale-110 transition duration-300 ease-in-out">
+                    <div class="h-85vh relative group cursor-pointer flex justify-center items-end overflow-hidden">
+                        <div class="h-85vh hidden absolute -inset-0 z-10 bg-gradient-to-b from-black/0 via-black/0 to-black group-hover:block transition-colors"></div>
+                        <div class="hidden absolute z-10 text-white m-8 md:text-lg group-hover:flex group-hover:flex-col items-center justify-center">
+                            <span class="px-1 font-quiche italic">— Tuesday —</span>
+                            <p class="text-base tracking-wider py-2 text-center">展現個性和品味的時尚造型，任何場合都充滿自信。</p>
+                            <button class="text-base tracking-wider relative">
+                                <p class="py-2 tracking-widest">探索穿搭</p>
+                                <div class="w-full h-0.5 bg-white absolute bottom-1 left-0 scale-x-0 group-hover:scale-x-100 transition duration-300 ease-in-out"></div>
+                            </button>
+                        </div>
+                        <img src="./src/img/ootd-2.jpg" class="absolute z-0 h-85vh object-cover group-hover:scale-110 transition duration-300 ease-in-out">
                     </div>
                     <div class="flex flex-col justify-center items-center h-85vh bg-purple-350">
                         <div class="relative group cursor-pointer w-3/4 overflow-hidden m-16">
-                            <div class="hidden absolute z-20 -inset-0 bg-white/60 group-hover:block backdrop-blur-sm transition-colors"></div>
-                            <button class="hidden absolute z-20 top-1/2 left-1/3 xl:left-1/4 font-quiche md:text-lg xl:px-5 py-2 md:px-3 xl:ml-10 group-hover:block hover:text-gray-700 transition-colors">
-                                <span class="px-1 ml-2">Lookbook</span>
-                                <i class='bx bx-right-arrow-alt md:text-base px-1 mr-1'></i>
-                            </button>
-                            <img src="src/img/ootd-3.jpg" class="z-10 object-cover group-hover:scale-110 transition duration-300 ease-in-out">                
+                            <div class="w-full h-auto hidden absolute -inset-0 z-10 bg-gradient-to-b from-black/0 to-black group-hover:block transition-colors"></div>
+                            <div class="hidden absolute lg:left-4 lg:bottom-2 z-10 text-white w-3/4 md:m-8 group-hover:flex group-hover:flex-col items-center justify-center">
+                                <span class="md:px-1 font-quiche italic text-xs md:text-base">— Wednesday —</span>
+                                <p class="text-xs md:text-base tracking-wider py-0 md:py-2 text-center">週中的時光，舒適穿搭讓工作心情更輕鬆。</p>
+                                <button class="text-base tracking-wider relative">
+                                    <p class="py-0 md:py-2 tracking-widest">探索穿搭</p>
+                                    <div class="w-full h-0.5 bg-white absolute bottom-1 left-0 scale-x-0 group-hover:scale-x-100 transition duration-300 ease-in-out"></div>
+                                </button>
+                            </div>
+                            <img src="./src/img/ootd-3.jpg" class="z-10 object-cover group-hover:scale-110 transition duration-300 ease-in-out">                
                         </div>
                         <p class="text-lg font-quiche italic">Orchid</p>
                     </div>
@@ -456,48 +399,64 @@
                 <div class="w-full bg-gradient-to-b from-pink-50 via-pink-50 to-pink-50/0 my-32" id="ootd-3">
                     <p class="font-quiche text-2xl text-orange-700/20 italic text-end pt-6">/ Here comes the hump day, which means there’s only two days left<br>until the weekend. /</p>
                     <div class="grid grid-cols-2 xl:grid-cols-3 m-20">
-                        <div class="relative group cursor-pointer overflow-hidden">
-                            <div class="hidden absolute z-10 -inset-0 bg-white/60 group-hover:block backdrop-blur-sm transition-colors"></div>
-                            <button class="hidden absolute z-10 top-1/2 left-1/4 font-quiche md:text-lg xl:px-5 py-2 md:px-3 ml-5 lg:ml-10 xl:ml-5 group-hover:block hover:text-gray-700 transition-colors">
-                                <span class="px-1 ml-2">Lookbook</span>
-                                <i class='bx bx-right-arrow-alt md:text-base px-1 mr-1'></i>
-                            </button>
-                            <img src="src/img/ootd-4.jpg" class=" group-hover:scale-110 transition duration-300 ease-in-out">
+                        <div class="relative group cursor-pointer overflow-hidden flex justify-center items-end">
+                            <div class="h-auto hidden absolute -inset-0 z-10 bg-gradient-to-b from-black/0 to-black group-hover:block transition-colors"></div>
+                            <div class="hidden absolute z-10 bottom-2 text-white m-8 md:text-lg group-hover:flex group-hover:flex-col items-center justify-center">
+                                <span class="px-1 font-quiche italic">— Thursday —</span>
+                                <p class="text-base tracking-wider py-2 text-center">選擇一件明亮的衣服，增添一點色彩和活力。</p>
+                                <button class="text-base tracking-wider relative">
+                                    <p class="py-2 tracking-widest">探索穿搭</p>
+                                    <div class="w-full h-0.5 bg-white absolute bottom-1 left-0 scale-x-0 group-hover:scale-x-100 transition duration-300 ease-in-out"></div>
+                                </button>
+                            </div>
+                            <img src="./src/img/ootd-4.jpg" class=" group-hover:scale-110 transition duration-300 ease-in-out">
                         </div>					
-                        <div class="relative group cursor-pointer overflow-hidden">
-                            <div class="hidden absolute z-10 -inset-0 bg-white/60 group-hover:block backdrop-blur-sm transition-colors"></div>
-                            <button class="hidden absolute z-10 top-1/2 left-1/4 font-quiche md:text-lg xl:px-5 py-2 md:px-3 ml-5 lg:ml-14 xl:ml-5 group-hover:block hover:text-gray-700 transition-colors">
-                                <span class="px-1 ml-2">Lookbook</span>
-                                <i class='bx bx-right-arrow-alt md:text-base px-1 mr-1'></i>
-                            </button>
-                            <img src="src/img/ootd-6.jpg" class="group-hover:scale-110 transition duration-300 ease-in-out">
+                        <div class="relative group cursor-pointer overflow-hidden flex justify-center items-end">
+                            <div class="h-auto hidden absolute -inset-0 z-10 bg-gradient-to-b from-black/0 to-black group-hover:block transition-colors"></div>
+                            <div class="hidden absolute z-10 text-white m-8 md:text-lg group-hover:flex group-hover:flex-col items-center justify-center">
+                                <span class="px-1 font-quiche italic">— Friday —</span>
+                                <p class="text-base tracking-wider py-2 text-center">TGIF!一套帶有週末氛圍的休閒穿搭，迎接美好的週末。</p>
+                                <button class="text-base tracking-wider relative">
+                                    <p class="py-2 tracking-widest">探索穿搭</p>
+                                    <div class="w-full h-0.5 bg-white absolute bottom-1 left-0 scale-x-0 group-hover:scale-x-100 transition duration-300 ease-in-out"></div>
+                                </button>
+                            </div>
+                            <img src="./src/img/ootd-6.jpg" class="group-hover:scale-110 transition duration-300 ease-in-out">
                         </div>
                     </div>
                 </div>
                 <div class="w-full bg-gradient-to-r from-blue-150 via-purple-350 to-gray-200 grid grid-cols-12 xl:grid-cols-3 my-40" id="ootd-4">
                     <div class="flex flex-col justify-center items-center m-4 col-span-2 xl:col-span-1">
                         <h2 class="font-quiche italic text-2xl">Rose</h2>
-                        <img src="src/img/star.png" width="30px" class="m-12">
+                        <img src="./src/img/star.png" width="30px" class="m-12">
                         <p class="font-quiche italic text-sm text-center">Be it love, longing or desire.</p>
                     </div>
                     <div class="flex flex-col justify-end col-span-10 xl:col-span-2">
                         <p class="font-quiche italic text-base text-white text-end py-10 px-10">The rose is red, the violet’s blue,<br>the honey’s sweet, and so are you.</p>
                         <div class="justify-end items-center mt-4 grid grid-cols-2">
-                            <div class="relative group cursor-pointer overflow-hidden">
-                                <div class="hidden absolute z-10 -inset-0 bg-white/60 group-hover:block backdrop-blur-sm transition-colors"></div>
-                                <button class="hidden absolute z-10 top-1/2 left-1/3 font-quiche md:text-lg xl:px-5 py-2 md:px-3 group-hover:block hover:text-gray-700 transition-colors">
-                                    <span class="px-1 ml-2">Lookbook</span>
-                                    <i class='bx bx-right-arrow-alt md:text-base px-1 mr-1'></i>
-                                </button>
-                                <img src="src/img/ootd-5.jpg" class="group-hover:scale-110 transition duration-300 ease-in-out">
+                            <div class="relative group cursor-pointer overflow-hidden flex justify-center items-end">
+                                <div class="h-auto hidden absolute -inset-0 z-10 bg-gradient-to-b from-black/0 to-black group-hover:block transition-colors"></div>
+                                <div class="hidden absolute z-10 text-white m-8 md:text-lg group-hover:flex group-hover:flex-col items-center justify-center">
+                                    <span class="px-1 font-quiche italic">— Saturday —</span>
+                                    <p class="text-base tracking-wider py-2 text-center">穿上輕盈舒適的服裝，享受在城市漫遊的美好時光。</p>
+                                    <button class="text-base tracking-wider relative">
+                                        <p class="py-2 tracking-widest">探索穿搭</p>
+                                        <div class="w-full h-0.5 bg-white absolute bottom-1 left-0 scale-x-0 group-hover:scale-x-100 transition duration-300 ease-in-out"></div>
+                                    </button>
+                                </div>
+                                <img src="./src/img/ootd-5.jpg" class="group-hover:scale-110 transition duration-300 ease-in-out">
                             </div>
-                            <div class="relative group cursor-pointer overflow-hidden">
-                                <div class="hidden absolute z-10 -inset-0 bg-white/60 group-hover:block backdrop-blur-sm transition-colors"></div>
-                                <button class="hidden absolute z-10 top-1/2 left-1/3 font-quiche md:text-lg xl:px-5 py-2 md:px-3 group-hover:block hover:text-gray-700 transition-colors">
-                                    <span class="px-1 ml-2">Lookbook</span>
-                                    <i class='bx bx-right-arrow-alt md:text-base px-1 mr-1'></i>
-                                </button>
-                                <img src="src/img/ootd-7.jpg" class="group-hover:scale-110 transition duration-300 ease-in-out">
+                            <div class="relative group cursor-pointer overflow-hidden flex justify-center items-end">
+                                <div class="h-auto hidden absolute -inset-0 z-10 bg-gradient-to-b from-black/0 to-black group-hover:block transition-colors"></div>
+                                <div class="hidden absolute z-10 text-white m-8 md:text-lg group-hover:flex group-hover:flex-col items-center justify-center">
+                                    <span class="px-1 font-quiche italic">— Sunday —</span>
+                                    <p class="text-base tracking-wider py-2 text-center">換上舒適的家居服或休閒裝，度過一個寫意的週末。</p>
+                                    <button class="text-base tracking-wider relative">
+                                        <p class="py-2 tracking-widest">探索穿搭</p>
+                                        <div class="w-full h-0.5 bg-white absolute bottom-1 left-0 scale-x-0 group-hover:scale-x-100 transition duration-300 ease-in-out"></div>
+                                    </button>
+                                </div>
+                                <img src="./src/img/ootd-7.jpg" class="group-hover:scale-110 transition duration-300 ease-in-out">
                             </div>
                         </div>
                     </div>
@@ -510,8 +469,8 @@
                         <p class="text-center">Email獲取服裝搭配靈感、最新產品資訊與優惠。</p>
                     </div>
                     <div class="flex flex-col justify-center items-center my-8 sm:flex-row xl:mx-8">
-                        <input type="email" placeholder="你的電子信箱" class="text-black p-4 w-full rounded-lg sm:rounded-none sm:rounded-tl-lg sm:rounded-bl-lg sm:w-3/4">
-                        <button class="p-4 my-4 w-full sm:w-auto border-none rounded-lg sm:rounded-none sm:rounded-tr-lg sm:rounded-br-lg bg-pink-550 hover:bg-pink-400 transition-colors hover:shadow-lg">訂閱</button>
+                        <input type="email" placeholder="你的電子信箱" class="text-black p-4 w-full sm:w-3/4">
+                        <button class="p-4 my-4 w-full sm:w-auto border-none bg-pink-550 hover:bg-black transition-colors">訂閱</button>
                     </div>
                     <div class="w-full border-white border absolute bottom-0 left-0"></div>
                 </div>
@@ -536,13 +495,13 @@
                             <div class="mb-8">
                                 <h4 class="font-medium tracking-wider mb-4">追蹤我們</h4>
                                 <div class="flex w-1/3">
-                                    <img src="src/img/instagram.jpg" class="my-4">
-                                    <img src="src/img/line.jpg" class="my-4 ml-4">
+                                    <img src="./src/img/instagram.jpg" class="my-4">
+                                    <img src="./src/img/line.jpg" class="my-4 ml-4">
                                 </div>
                             </div>
                             <div class="flex flex-col">
                                 <h4 class="font-medium tracking-wider mb-4">安全支付</h4>
-                                <img src="src/img/Payment.png" class="my-4 w-1/2">				
+                                <img src="./src/img/Payment.png" class="my-4 w-1/2">				
                             </div>
                         </div>			
                     </div>
@@ -558,15 +517,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
     <script type="text/javascript">
         var scene = document.getElementById('scene');
         var parallaxInstance = new Parallax(scene);
     </script>
 
+    
     <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
     <script type="module" src="src/index.js"></script>
-    <script type="module" src="src/tw-elements.js"></script> 
-    <script type="text/javascript" src="../node_modules/tw-elements/dist/js/tw-elements.umd.min.js"></script>
+    <script type="module" src="src/sidebar.js"></script>
   </body>
 </html>
