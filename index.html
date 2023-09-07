@@ -39,13 +39,13 @@
                         <i class='bx bx-menu text-3xl'></i>
                     </button>
                 </div>
-                <div class="absolute z-[1045] w-full h-screen flex">
-                    <div id="overlay" class="w-full h-screen bg-black/25 close-overlay"></div>
-                    <div id="offcanva" class="close">
-                        <div class="relative flex flex-col justify-between items-center overflow-hidden p-4 bg-gradient-to-b from-purple-350 to-pink-200 text-white w-full h-screen">
+                <div id="nav" class="absolute z-[1045] w-full h-screen close">
+                    <div id="overlay" class="w-full h-screen bg-black/25 fixed top-0 left-0"></div>
+                    <div id="offcanva" class="w-full h-screen fixed top-0 right-0">
+                        <div class="relative flex flex-col justify-between p-4 overflow-hidden bg-gradient-to-b from-purple-350 to-pink-200 text-white h-screen">
                             <div class="flex flex-col items-start justify-start">
                                 <button id="close" type="button" class="btn-menu">
-                                    <i class='bx bx-x text-4xl p-12'></i>
+                                    <i class='bx bx-x text-4xl'></i>
                                 </button>
                                 <ul class="flex flex-col justify-between items-center">
                                     <li class="text-lg tracking-wider py-2 m-5 group cursor-pointer relative">
@@ -96,42 +96,40 @@
                     </div>			 
                 </div>
             </header>
-            <div class="relative w-full h-screen overflow-hidden flex justify-center items-center bg-gradient-to-br from-purple-350 to-pink-200">
-                <div class="w-120% -left-10% -top-10% h-screen absolute">
-                    <div id="scene" class="absolute top-0 left-0 w-full">
-                        <div data-depth-x="0.2" class="absolute top-0 left-0 z-20">
-                            <img src="./src/img/bg_3.png" class="h-screen w-full object-cover sm:h-auto" id="bg2">
+            <div class="relative w-full h-screen overflow-hidden">
+                <div class="w-120% -left-10% h-screen absolute flex justify-center items-center flex-wrap">
+                    <div id="scene" class="absolute top-0 left-0 w-full h-screen">
+                        <div data-depth-x="0.2" class="absolute top-0 left-0 z-20 w-full h-screen">
+                            <img src="./src/img/bg_3.png" class=" absolute top-0 left-0 h-full w-full object-cover" id="bg2">
                         </div>
-                        <div data-depth-x="0.4" class="absolute top-0 left-0 z-10">
-                            <img src="./src/img/bg_1.png" class="h-screen w-full object-cover sm:h-auto" id="bg1">
+                        <div data-depth-x="0.4" class="absolute top-0 left-0 z-10 w-full h-screen">
+                            <img src="./src/img/bg_1.png" class="absolute top-0 left-0 h-full w-full object-cover" id="bg1">
                         </div>
                     </div>
-                    <div class="absolute top-8 left-0 z-30 h-screen w-full flex mx-4 lg:grid lg:grid-cols-12 lg:grid-rows-4">
-                        <div class="w-full bg-white/30 backdrop-blur-sm md:bg-transparent md:backdrop-blur-0 md:col-span-5 md:col-start-2 md:row-start-2 relative">
-                            <div class="flex flex-col justify-start mx-16">
-                                <h1 class="my-4 text-pink-950 text-4xl md:text-3xl lg:text-5xl font-light tracking-wider leading-normal">質感至上，風格無限<br>獨特風采自由定義</h1>
-                                <p class="my-4 text-pink-950 text-base font-Noto Sans tracking-wide flex-wrap leading-normal">融合時尚、優雅、獨特，為你呈現一場穿越風格與個性的時尚之旅，每季新品都給你驚喜與新鮮感，無論你是追求經典風格還是喜歡突破嘗試，我們總有一款適合你。</p>
-                                <div class="my-4 flex justify-start items-center">
-                                    <p class=" bg-pink-550 hover:bg-black text-white font-Noto Sans text-base tracking-wider px-8 py-4 mr-8 cursor-pointer">加入會員</p>
-                                </div>
+                    <div class="absolute top-0 left-10% z-30 h-screen w-screen flex justify-between items-center sm:grid sm:grid-cols-12">
+                        <div class="w-full h-screen flex flex-col justify-center items-start mx-8 lg:mx-0 sm:col-span-10 sm:col-start-1 lg:col-span-5 lg:col-start-2">
+                            <h1 class="my-4 sm:my-2 lg:my-4 text-pink-950 text-3xl sm:text-xl md:text-4xl lg:text-5xl font-light tracking-wider leading-normal">質感至上，風格無限<br>獨特風采自由定義</h1>
+                            <p class="my-4 sm:my-2 lg:my-4 text-pink-950 text-base font-Noto Sans tracking-wide leading-normal flex-wrap">融合時尚、優雅、獨特，為你呈現一場穿越風格與個性的時尚之旅，每季新品都給你驚喜與新鮮感，無論你是追求經典風格還是喜歡突破嘗試，我們總有一款適合你。</p>
+                            <div class="my-4 sm:my-2 md:my-4">
+                                <p class=" hover:bg-pink-550 bg-black text-white font-Noto Sans text-base tracking-wider px-8 sm:px-4 md:px-8 py-4 sm:py-3 md:py-4 cursor-pointer">加入會員</p>
                             </div>
                         </div>
-                        <canvas id="canvas3d" class="hidden lg:grid lg:col-span-5 lg:col-start-7 lg:row-start-1 lg:row-span-4"></canvas>
+                        <canvas id="canvas3d" class="hidden h-screen lg:grid lg:col-span-5 lg:start-7 lg:row-span-4"></canvas>
                     </div>
                 </div>
             </div>
             <div id="s2-laptop" class="">
                 <div class="flex justify-center items-center w-full h-screen lg:h-150vh">
-                    <div class="w-full lg:w-8/12 h-screen lg:h-150vh relative">
+                    <div class="w-full lg:w-8/12 h-screen lg:h-150vh relative flex justify-center items-center">
                         <div class="h-full absolute -inset-0 z-10 bg-gradient-to-b from-white/50 via-white/0 to-white/50"></div>
-                        <div class="absolute z-20 w-full h-full flex flex-col justify-center items-center text-white">
-                            <div class="flex flex-col justify-center items-center my-4">
-                                <span class="item font-quiche text-xl my-4">/ Clothes /</span>
-                                <h2 class="item text-3xl tracking-wider  my-4">衣著</h2>                   
+                        <div class="absolute z-20 flex flex-col justify-center items-center text-white m-4">
+                            <div class="flex flex-col justify-center items-center my-2 lg:my-4">
+                                <span class="item font-quiche text-xl sm:text-base lg:text-xl my-2 lg:my-4">/ Clothes /</span>
+                                <h2 class="item text-3xl sm:text-base lg:text-3xl tracking-wider my-2 lg:my-4">衣著</h2>                   
                             </div>
-                            <div class="mydivide  border-black py-2 flex flex-col items-center justify-between">
+                            <div class="mydivide border-black flex flex-col items-center justify-between">
                                 <img src="./src/img/starwhite.png" width="30px">
-                                <p class="number font-quiche text-9xl my-4">01</p>
+                                <p class="number font-quiche text-6xl sm:text-xl lg:text-9xl my-2 lg:my-4">01</p>
                                 <p class="info text-base mb-6">從經典款到潮流款，多樣化的單品滿足你不同的風格需求。</p>
                                 <button class="cta w-full flex justify-center items-center font-quiche text-base py-4 px-3 mb-4 bg-white/15 backdrop-blur-sm border-2 hover:border-black border-white text-white hover:bg-black transition duration-300 ease-in-out">
                                     <a href="#" class="pr-2 tracking-wider">商品目錄</a>
@@ -146,7 +144,7 @@
                             <img class="w-full h-4/5 object-contain group-hover:hidden" src="./src/img/bestseller-1-1.jpg">
                             <img class="w-full h-4/5 object-contain group-hover:block hidden" src="./src/img/bestseller-1-2.jpg">
                             <div class="flex flex-col justify-center items-center w-full h-1/5 text-black text-base px-4 border-y border-black">
-                                <h1 class="pb-2">V領羊絨毛衣</h1>
+                                <h1 class="">V領羊絨毛衣</h1>
                                 <p>NT$60000</p>                                 
                             </div>
                         </div>
@@ -154,7 +152,7 @@
                             <img class="w-full h-4/5 object-contain group-hover:hidden" src="./src/img/bestseller-2-1.jpg">
                             <img class="w-full h-4/5 object-contain group-hover:block hidden" src="./src/img/bestseller-2-2.jpg">
                             <div class="flex flex-col justify-center items-center w-full h-1/5 text-black text-base px-4 border-y border-black bg-[#f8f8f8]">
-                                <h1 class="pb-2">珠地呢迷你裙</h1>
+                                <h1 class="">珠地呢迷你裙</h1>
                                 <p>NT$24000</p>                                 
                             </div>
                         </div>
@@ -162,7 +160,7 @@
                             <img class="w-full h-4/5 object-contain group-hover:hidden" src="./src/img/bestseller-3-1.jpg">
                             <img class="w-full h-4/5 object-contain group-hover:block hidden" src="./src/img/bestseller-3-2.jpg">
                             <div class="flex flex-col justify-center items-center w-full h-1/5 text-black text-base px-4 border-t border-black bg-[#f8f8f8]">
-                                <h1 class="pb-2">刺繡棉質T恤</h1>
+                                <h1 class="">刺繡棉質T恤</h1>
                                 <p>NT$24000</p>                                 
                             </div>
                         </div>
@@ -174,7 +172,7 @@
                             <img class="w-full h-4/5 object-contain group-hover:hidden" src="./src/img/bestseller-4-1.jpg">
                             <img class="w-full h-4/5 object-contain group-hover:block hidden" src="./src/img/bestseller-4-2.jpg">
                             <div class="flex flex-col justify-center items-center w-full h-1/5 text-black text-base px-4 border-y border-black">
-                                <h1 class="pb-2">絎縫拉鍊肩背包</h1>
+                                <h1 class="">絎縫拉鍊肩背包</h1>
                                 <p>NT$44000</p>                                 
                             </div>
                         </div>
@@ -182,7 +180,7 @@
                             <img class="w-full h-4/5 object-contain group-hover:hidden" src="./src/img/bestseller-5-1.jpg">
                             <img class="w-full h-4/5 object-contain group-hover:block hidden" src="./src/img/bestseller-5-2.jpg">
                             <div class="flex flex-col justify-center items-center w-full h-1/5 text-black text-base px-4 border-y border-black bg-[#f8f8f8]">
-                                <h1 class="pb-2">皮革肩背包</h1>
+                                <h1 class="">皮革肩背包</h1>
                                 <p>NT$47000</p>                                 
                             </div>
                         </div>
@@ -190,21 +188,21 @@
                             <img class="w-full h-4/5 object-contain group-hover:hidden" src="./src/img/bestseller-6-1.jpg">
                             <img class="w-full h-4/5 object-contain group-hover:block hidden" src="./src/img/bestseller-6-2.jpg">
                             <div class="flex flex-col justify-center items-center w-full h-1/5 text-black text-base px-4 border-t border-black bg-[#f8f8f8]">
-                                <h1 class="pb-2">雅緻皮革包</h1>
+                                <h1 class="">雅緻皮革包</h1>
                                 <p>NT$44000</p>                                 
                             </div>
                         </div>
                     </div>
-                    <div class="w-full lg:w-8/12 h-screen lg:h-150vh relative">
+                    <div class="w-full lg:w-8/12 h-screen lg:h-150vh relative flex justify-center items-center">
                         <div class="h-full absolute -inset-0 z-10 bg-gradient-to-b from-white/50 via-white/0 to-white/50"></div>
-                        <div class="absolute z-20 w-full h-full flex flex-col justify-center items-center text-white">
+                        <div class="absolute z-20 flex flex-col justify-center items-center text-white m-4">
                             <div class="flex flex-col justify-center items-center my-4">
-                                <span class="item font-quiche text-xl my-4">/ Bags /</span>
-                                <h2 class="item text-3xl tracking-wider  my-4">包款</h2>                   
+                                <span class="item font-quiche text-xl sm:text-base lg:text-xl my-2 lg:my-4">/ Bags /</span>
+                                <h2 class="item text-3xl sm:text-base lg:text-3xl tracking-wider my-2 lg:my-4">包款</h2>                   
                             </div>
-                            <div class="mydivide  border-black py-2 flex flex-col items-center justify-between">
+                            <div class="mydivide  border-black flex flex-col items-center justify-between">
                                 <img src="./src/img/starwhite.png" width="30px">
-                                <p class="number font-quiche text-9xl my-4">02</p>
+                                <p class="number font-quiche text-6xl sm:text-xl lg:text-9xl my-2 lg:my-4">02</p>
                                 <p class="info text-base mb-6">生活必備單品，精緻且現代的設計，提升整體造型的時尚感。</p>
                                 <button class="cta w-full flex justify-center items-center font-quiche text-base py-4 px-3 mb-4 bg-white/15 backdrop-blur-sm border-2 hover:border-black border-white text-white hover:bg-black transition duration-300 ease-in-out">
                                     <a href="#" class="pr-2 tracking-wider">商品目錄</a>
@@ -216,16 +214,16 @@
                     </div>
                 </div>
                 <div class="flex justify-center items-center w-full h-screen lg:h-150vh">
-                    <div class="w-full lg:w-8/12 h-screen lg:h-150vh relative">
+                    <div class="w-full lg:w-8/12 h-screen lg:h-150vh relative flex justify-center items-center">
                         <div class="h-full absolute -inset-0 z-10 bg-gradient-to-b from-white/50 via-white/0 to-white/50"></div>
-                        <div class="absolute z-20 w-full h-full flex flex-col justify-center items-center text-white">
+                        <div class="absolute z-20 flex flex-col justify-center items-center text-white m-4">
                             <div class="flex flex-col justify-center items-center my-4">
-                                <span class="item font-quiche text-xl my-4">/ Accessories /</span>
-                                <h2 class="item text-3xl tracking-wider  my-4">配飾</h2>                   
+                                <span class="item font-quiche text-xl sm:text-base lg:text-xl my-2 lg:my-4">/ Accessories /</span>
+                                <h2 class="item text-3xl sm:text-base lg:text-3xl tracking-wider my-2 lg:my-4">配飾</h2>                   
                             </div>
-                            <div class="mydivide  border-black py-2 flex flex-col items-center justify-between">
+                            <div class="mydivide  border-black flex flex-col items-center justify-between">
                                 <img src="./src/img/starwhite.png" width="30px">
-                                <p class="number font-quiche text-9xl my-4">03</p>
+                                <p class="number font-quiche text-6xl sm:text-xl lg:text-9xl my-2 lg:my-4">03</p>
                                 <p class="info text-base mb-6">華麗的項鍊到時尚的手錶搭扣，每一款配飾都為你精心挑選。</p>
                                 <button class="cta w-full flex justify-center items-center font-quiche text-base py-4 px-3 mb-4 bg-white/15 backdrop-blur-sm border-2 hover:border-black border-white text-white hover:bg-black transition duration-300 ease-in-out">
                                     <a href="#" class="pr-2 tracking-wider">商品目錄</a>
@@ -240,7 +238,7 @@
                             <img class="w-full h-4/5 object-contain group-hover:hidden" src="./src/img/bestseller-7-1.jpg">
                             <img class="w-full h-4/5 object-contain group-hover:block hidden" src="./src/img/bestseller-7-2.jpg">
                             <div class="flex flex-col justify-center items-center w-full h-1/5 text-black text-base px-4 border-y border-black">
-                                <h1 class="pb-2">新月鍍白金色手鐲</h1>
+                                <h1 class="">新月鍍白金色手鐲</h1>
                                 <p>NT$5400</p>                                 
                             </div>
                         </div>
@@ -248,7 +246,7 @@
                             <img class="w-full h-4/5 object-contain group-hover:hidden" src="./src/img/bestseller-8-1.jpg">
                             <img class="w-full h-4/5 object-contain object-right group-hover:block hidden" src="./src/img/bestseller-8-2.jpg">
                             <div class="flex flex-col justify-center items-center w-full h-1/5 text-black text-base px-4 border-y border-black bg-[#f8f8f8]">
-                                <h1 class="pb-2">斯堪地納維亞純銀耳環</h1>
+                                <h1 class="">斯堪地納維亞純銀耳環</h1>
                                 <p>NT$10000</p>                                 
                             </div>
                         </div>
@@ -256,7 +254,7 @@
                             <img class="w-full h-4/5 object-contain group-hover:hidden" src="./src/img/bestseller-9-1.jpg">
                             <img class="w-full h-4/5 object-contain group-hover:block hidden" src="./src/img/bestseller-9-2.jpg">
                             <div class="flex flex-col justify-center items-center w-full h-1/5 text-black text-base px-4 border-t border-black bg-[#f8f8f8]">
-                                <h1 class="pb-2">高清抗藍光眼鏡</h1>
+                                <h1 class="">高清抗藍光眼鏡</h1>
                                 <p>NT$8000</p>                                 
                             </div>
                         </div>
@@ -268,81 +266,100 @@
 
 
 
-            <div id="ootd-sm" class="lg:hidden flex flex-col justify-center items-center">
-                <h1 class="text-4xl font-quiche font-bold p-5">Outfit of the day</h1>
-                <div class="m-8">
-                    <div class="m-8 h-85vh w-full">
-                        <img src="./src/img/ootd-1.jpg" class="w-full h-3/4 object-cover rounded-2xl">            
-                        <div class="my-6 w-full">
+            <div id="ootd-sm" class="lg:hidden flex flex-col justify-center items-center m-4">
+                <h1 class="text-3xl font-quiche font-bold p-5 text-center">Outfit of the day</h1>
+                <div class="m-8 h-85vh w-full">
+                    <img src="./src/img/ootd-1.jpg" class="w-full h-3/4 object-cover rounded-2xl">            
+                    <div class="my-4 w-full flex flex-col items-center justify-center">
+                        <div class="flex items-baseline justify-center flex-wrap">
                             <h1 class="font-quiche text-3xl italic">Mon. /</h1>
-                            <p class="px-4 text-lg">簡約而專業的穿搭，展現你的工作精神。</p>
-                            <button class="text-lg tracking-wider relative">
-                                <p class="py-2 tracking-widest">探索穿搭</p>
-                                <div class="w-full h-0.5 bg-black absolute bottom-1 left-0"></div>
-                            </button>                      
+                            <p class="px-4 text-base tracking-wider text-center">簡約而專業的穿搭，展現你的工作精神。</p>
                         </div>
-                    </div>
-                    <div class="m-8 h-85vh">
-                        <img src="./src/img/ootd-2.jpg" class="h-3/4 object-cover rounded-2xl">            
-                        <div class="my-6 mx-1 flex justify-between items-baseline">
-                            <h1 class="font-quiche text-3xl italic mr-5">02 /</h1>
-                            <button class="flex justify-end font-quiche text-2xl py-2 hover:text-gray-500 transition-colors">
-                                <span class="px-1 ml-2">Lookbook</span>
-                                <i class='bx bx-right-arrow-alt text-xl px-1 mr-1'></i>
-                            </button>                      
-                        </div>
-                    </div>
-                    <div class="m-8 h-85vh">
-                        <img src="./src/img/ootd-3-2.jpg" class="h-3/4 object-cover rounded-2xl">            
-                        <div class="my-6 mx-1 flex justify-between items-baseline">
-                            <h1 class="font-quiche text-3xl italic mr-5">03 /</h1>
-                            <button class="flex justify-end font-quiche text-2xl py-2 hover:text-gray-500 transition-colors">
-                                <span class="px-1 ml-2">Lookbook</span>
-                                <i class='bx bx-right-arrow-alt text-xl px-1 mr-1'></i>
-                            </button>                      
-                        </div>
-                    </div>
-                    <div class="m-8 h-85vh">
-                        <img src="./src/img/ootd-4.jpg" class="h-3/4 object-cover rounded-2xl">            
-                        <div class="my-6 mx-1 flex justify-between items-baseline">
-                            <h1 class="font-quiche text-3xl italic mr-5">04 /</h1>
-                            <button class="flex justify-end font-quiche text-2xl py-2 hover:text-gray-500 transition-colors">
-                                <span class="px-1 ml-2">Lookbook</span>
-                                <i class='bx bx-right-arrow-alt text-xl px-1 mr-1'></i>
-                            </button>                       
-                        </div>
-                    </div>
-                    <div class="m-8 h-85vh">
-                        <img src="./src/img/ootd-5.jpg" class="h-3/4 object-cover rounded-2xl">            
-                        <div class="my-6 mx-1 flex justify-between items-baseline">
-                            <h1 class="font-quiche text-3xl italic mr-5">05 /</h1>
-                            <button class="flex justify-end font-quiche text-2xl py-2 hover:text-gray-500 transition-colors">
-                                <span class="px-1 ml-2">Lookbook</span>
-                                <i class='bx bx-right-arrow-alt text-xl px-1 mr-1'></i>
-                            </button>                       
-                        </div>
-                    </div>
-                    <div class="m-8 h-85vh">
-                        <img src="./src/img/ootd-6.jpg" class="h-3/4 object-cover rounded-2xl">            
-                        <div class="my-6 mx-1 flex justify-between items-baseline">
-                            <h1 class="font-quiche text-3xl italic mr-5">06 /</h1>
-                            <button class="flex justify-end font-quiche text-2xl py-2 hover:text-gray-500 transition-colors">
-                                <span class="px-1 ml-2">Lookbook</span>
-                                <i class='bx bx-right-arrow-alt text-xl px-1 mr-1'></i>
-                            </button>                       
-                        </div>
-                    </div>
-                    <div class="m-8 h-85vh">
-                        <img src="./src/img/ootd-7.jpg" class="h-3/4 object-cover rounded-2xl">            
-                        <div class="my-6 mx-1 flex justify-between items-baseline">
-                            <h1 class="font-quiche text-3xl italic mr-5">07 /</h1>
-                            <button class="flex justify-end font-quiche text-2xl py-2 hover:text-gray-500 transition-colors">
-                                <span class="px-1 ml-2">Lookbook</span>
-                                <i class='bx bx-right-arrow-alt text-xl px-1 mr-1'></i>
-                            </button>                    
-                        </div>
+                        <button class="text-lg relative my-2">
+                            <p class="py-2 tracking-wider">探索穿搭</p>
+                            <div class="w-full h-0.5 bg-black absolute bottom-1 left-0"></div>
+                        </button>                      
                     </div>
                 </div>
+                <div class="m-8 h-85vh w-full">
+                    <img src="./src/img/ootd-2.jpg" class="w-full h-3/4 object-cover rounded-2xl">            
+                    <div class="my-4 w-full flex flex-col items-center justify-center">
+                        <div class="flex items-baseline justify-center flex-wrap">
+                            <h1 class="font-quiche text-3xl italic">Tue. /</h1>
+                            <p class="px-4 text-base tracking-wider text-center">展現個性和品味的時尚造型，任何場合都充滿自信。</p>
+                        </div>
+                        <button class="text-lg relative my-2">
+                            <p class="py-2 tracking-wider">探索穿搭</p>
+                            <div class="w-full h-0.5 bg-black absolute bottom-1 left-0"></div>
+                        </button>                      
+                    </div>
+                </div>
+                <div class="m-8 h-85vh w-full">
+                    <img src="./src/img/ootd-3-2.jpg" class="w-full h-3/4 object-cover rounded-2xl">            
+                    <div class="my-4 w-full flex flex-col items-center justify-center">
+                        <div class="flex items-baseline justify-center flex-wrap">
+                            <h1 class="font-quiche text-3xl italic">Wed. /</h1>
+                            <p class="px-4 text-base tracking-wider text-center">週中的時光，舒適穿搭讓工作心情更輕鬆。</p>
+                        </div>
+                        <button class="text-lg relative my-2">
+                            <p class="py-2 tracking-wider">探索穿搭</p>
+                            <div class="w-full h-0.5 bg-black absolute bottom-1 left-0"></div>
+                        </button>                      
+                    </div>
+                </div>
+                <div class="m-8 h-85vh w-full">
+                    <img src="./src/img/ootd-4.jpg" class="w-full h-3/4 object-cover rounded-2xl">            
+                    <div class="my-4 w-full flex flex-col items-center justify-center">
+                        <div class="flex items-baseline justify-center flex-wrap">
+                            <h1 class="font-quiche text-3xl italic">Thu. /</h1>
+                            <p class="px-4 text-base tracking-wider text-center">選擇一件明亮的衣服，增添一點色彩和活力。</p>
+                        </div>
+                        <button class="text-lg relative my-2">
+                            <p class="py-2 tracking-wider">探索穿搭</p>
+                            <div class="w-full h-0.5 bg-black absolute bottom-1 left-0"></div>
+                        </button>                      
+                    </div>
+                </div>
+                <div class="m-8 h-85vh w-full">
+                    <img src="./src/img/ootd-5.jpg" class="w-full h-3/4 object-cover rounded-2xl">            
+                    <div class="my-4 w-full flex flex-col items-center justify-center">
+                        <div class="flex items-baseline justify-center flex-wrap">
+                            <h1 class="font-quiche text-3xl italic">Fri. /</h1>
+                            <p class="px-4 text-base tracking-wider text-center">TGIF!一套帶有週末氛圍的休閒穿搭，迎接美好的週末。</p>
+                        </div>
+                        <button class="text-lg relative my-2">
+                            <p class="py-2 tracking-wider">探索穿搭</p>
+                            <div class="w-full h-0.5 bg-black absolute bottom-1 left-0"></div>
+                        </button>                      
+                    </div>
+                </div>
+                <div class="m-8 h-85vh w-full">
+                    <img src="./src/img/ootd-6.jpg" class="w-full h-3/4 object-cover rounded-2xl">            
+                    <div class="my-4 w-full flex flex-col items-center justify-center">
+                        <div class="flex items-baseline justify-center flex-wrap">
+                            <h1 class="font-quiche text-3xl italic">Sat. /</h1>
+                            <p class="px-4 text-base tracking-wider text-center">穿上輕盈舒適的服裝，享受在城市漫遊的美好時光。</p>
+                        </div>
+                        <button class="text-lg relative my-2">
+                            <p class="py-2 tracking-wider">探索穿搭</p>
+                            <div class="w-full h-0.5 bg-black absolute bottom-1 left-0"></div>
+                        </button>                      
+                    </div>
+                </div>
+                <div class="m-8 h-85vh w-full">
+                    <img src="./src/img/ootd-7.jpg" class="w-full h-3/4 object-cover rounded-2xl">            
+                    <div class="my-4 w-full flex flex-col items-center justify-center">
+                        <div class="flex items-baseline justify-center flex-wrap">
+                            <h1 class="font-quiche text-3xl italic">Sun. /</h1>
+                            <p class="px-4 text-base tracking-wider text-center">換上舒適的家居服或休閒裝，度過一個寫意的週末。</p>
+                        </div>
+                        <button class="text-lg relative my-2">
+                            <p class="py-2 tracking-wider">探索穿搭</p>
+                            <div class="w-full h-0.5 bg-black absolute bottom-1 left-0"></div>
+                        </button>                      
+                    </div>
+                </div>
+
             </div>
             <div id="ootd" class="hidden lg:block">
                 <div class="w-full h-85vh grid grid-cols-3" id="ootd-1">
@@ -463,7 +480,7 @@
                 </div>
             </div>  
             <footer class="flex justify-center align-middle flex-col bg-gradient-to-br from-pink-450 via-purple-350 to-red-300 text-white font-Poppins relative">
-                <div id="newsletter" class="grid xl:grid-cols-2 justify-center items-center mx-24 py-24 relative">
+                <div id="newsletter" class="grid xl:grid-cols-2 justify-center items-center mx-4 lg:mx-24 py-24 relative">
                     <div class="flex flex-col justify-center items-center">
                         <h2 class="text-2xl font-bold pb-4 tracking-wide text-center">訂閱Muses生活週報</h2>
                         <p class="text-center">Email獲取服裝搭配靈感、最新產品資訊與優惠。</p>
@@ -474,7 +491,7 @@
                     </div>
                     <div class="w-full border-white border absolute bottom-0 left-0"></div>
                 </div>
-                <div class="mx-24 pt-24 pb-12">
+                <div class="mx-4 lg:mx-24 pt-24 pb-12">
                     <a class="text-4xl font-bold font-funkydori py-8">Muses</a>	
                     <div class="grid grid-cols-12 gap-5 mt-8">
                         <div class="flex flex-col items-start col-span-12 xl:col-span-6 mb-8">
@@ -528,5 +545,5 @@
     <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
     <script type="module" src="src/index.js"></script>
     <script type="module" src="src/sidebar.js"></script>
-  </body>
+    </body>
 </html>

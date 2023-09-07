@@ -1,17 +1,14 @@
 const menuBtn = document.querySelector(".btn-menu");
 const closeBtn = document.querySelector("#close");
 const overlay = document.querySelector("#overlay");
-const offcanva = document.querySelector("#offcanva");
+const nav = document.querySelector("#nav");
 
 menuBtn.addEventListener("click", () => {
-  offcanva.classList.toggle("open");
+  nav.classList.remove("close");
+  nav.classList.toggle("open");
 });
 
 closeBtn.addEventListener("click", () => {
-  offcanva.classList.remove("open");
+  nav.classList.remove("open");
+  nav.classList.toggle("close");
 });
-
-overlay.addEventListener("click", () => {
-  offcanva.classList.remove("open");
-});
-
