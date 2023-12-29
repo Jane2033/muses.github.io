@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@splinetool/runtime": "^0.9.375",
-    "gh-pages": "^3.0.0",
+    "gh-pages": "^3.2.3",
     "scrollmagic": "^2.0.8",
     "tw-elements": "^1.0.0-beta3"
   }
